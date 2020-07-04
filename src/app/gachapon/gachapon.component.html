@@ -1,0 +1,8 @@
+
+<div class = tab-content>
+    <button class="tab" (click)="assignTab('gacha')">Gacha!</button>
+    <button class="tab" (click)="assignTab('stats')">Statistics</button>
+
+    <ng-content *ngComponentOutlet ="dummyComponent"></ng-content> <!--To use angular content projection-->
+</div>
+

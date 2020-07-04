@@ -1,0 +1,82 @@
+.sidenav-container {
+  height: 100%;
+  
+}
+
+.sidenav {
+  width: 200px;
+  background: #333333;
+}
+
+/*---- Horizontal Bar on bar -----*/
+.ng-tns-c37-0 hr{
+  border-color: grey;
+  border-top: 1px solid grey;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.sidenav .mat-toolbar {
+  background: #333333;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-toolbar {
+  background: #333333;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mat-toolbar img {
+  height: 60px;
+  width: 60px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+span img{
+  height: 24px;
+  width: 24px;
+}
+
+/*-------Horizontal GachaNX Counter-----*/
+.horizontalCounters img{
+  height: 20px;
+  width: 20px;
+  margin-left: 5%;
+}
+
+.horizontalCounters small{
+  color: rgba(210, 210, 200, 0.87);
+}
+
+.horizontalCounters h1 {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 20px;
+  position:relative; 
+  top: -5px; left: 5px; 
+}
+
+/*-------Item's in the Menu ----------*/
+.mat-list-base .mat-list-item img {
+  height: 48px;
+  width: 48px;
+  filter: drop-shadow(1px 2px 1px #222);
+}
+
+.mat-list-base .mat-list-item {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.mat-list-base .mat-list-item:hover {
+  color: green;
+  text-shadow: 3px 3px black;
+}
+/*----------------END------------------*/
+
