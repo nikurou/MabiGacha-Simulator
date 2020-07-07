@@ -1,5 +1,8 @@
 # MabinogiGacha
 
+Accurately simulates a lootbox for Nexon's popular MMORPG title, Mabinogi. Supports features such as multi-gaching and continous gaching until user specified item is found. 
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
 ## Development server
