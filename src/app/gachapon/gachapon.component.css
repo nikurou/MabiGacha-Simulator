@@ -27,3 +27,44 @@ body, html {
 .tab:hover {
     background-color: #777;
   }
+
+
+.left-half {  
+   
+    position: relative;
+    width: 50%;
+}
+  
+.right-half {
+    position: relative;
+    width: 50%;
+}
+
+.console {
+    height:700px;
+    width:100%;
+    overflow-y: scroll;
+    background-color:black;
+    color:white;
+    scrollbar-base-color:gold;
+    font-family:'Courier New', Courier, monospace;
+    padding:10px;
+    
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+ 
+}
+
+
