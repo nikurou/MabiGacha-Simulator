@@ -40,17 +40,7 @@ body, html {
     width: 50%;
 }
 
-.console {
-    height:700px;
-    width:100%;
-    overflow-y: scroll;
-    background-color:black;
-    color:white;
-    scrollbar-base-color:gold;
-    font-family:'Courier New', Courier, monospace;
-    padding:10px;
-    
-}
+
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
@@ -67,33 +57,41 @@ body, html {
  
 }
 
+/* ------------------Gachapon/Rates NAVBAR ----------------*/
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: rgb(51,51,51);
-    overflow: hidden;
-    width: 104.3%;
-  }
+/* Add a background color to the top navigation */
+
+/* Styles for tab labels */
+.mat-tab-label {
+
+  padding: 5px;
+  background-color: rgb(51,51,51); /*So I set the color here to black */ 
+  color: white;
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
   
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
+  padding: 5px;
+  background-color: black;
+  color:white;
+  font-weight: 700;
+}
+
+/* Styles for the ink bar */
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {         
+  height:4px;    
+  background: grey;
+}
+
+
+
+/*Hide the scroll bar on the tab content*/
+.mat-tab-body-content {
+  overflow: hidden !important;
+ 
+}
+/* ------------------Gachapon/Rates NAVBAR ----------------*/
 

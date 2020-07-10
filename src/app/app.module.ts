@@ -15,7 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { GachaponComponent } from './gachapon/gachapon.component';
 import { LootComponent } from './loot/loot.component';
 import { AboutComponent } from './about/about.component';
-
+import { ConsoleComponent } from './console/console.component';
+import { RatesComponent } from './rates/rates.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { AboutComponent } from './about/about.component';
     GachaponComponent,
     LootComponent,
     AboutComponent,
+    ConsoleComponent,
+    RatesComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatTabsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
