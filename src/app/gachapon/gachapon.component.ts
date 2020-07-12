@@ -21,6 +21,6 @@ export class GachaponComponent implements OnInit {
 
   
   //DEFAULT COMPONENTS
-  consoleComponent = ConsoleComponent;
-  ratesComponent = RatesComponent;
+ 
+  
 }

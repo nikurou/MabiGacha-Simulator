@@ -16,10 +16,10 @@
        
           <mat-tab-group mat-align-tabs="start" >
             <mat-tab label="Console">
-              <ng-content *ngComponentOutlet ="consoleComponent" ></ng-content> <!--To use angular content projection-->
+              <app-console></app-console>
             </mat-tab>
             <mat-tab label="Rates"> 
-              <ng-content *ngComponentOutlet ="consoleComponent" ></ng-content> <!--To use angular content projection-->
+              <app-rates></app-rates>
             </mat-tab>
           </mat-tab-group>
         
