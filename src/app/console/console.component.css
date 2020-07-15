@@ -5,9 +5,17 @@
     overflow-x: hidden !important; /* Hide horizontal scrollbar */
     background-color:black;
     color:white;
-    scrollbar-base-color:gold;
     font-family:'Courier New', Courier, monospace;
     padding:10px;
     font-size: 1em;
     
+}
+
+@media screen and (max-width: 813px){
+    
+    .console {
+        height:400px;
+    }
+
+
 }

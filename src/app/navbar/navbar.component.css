@@ -1,11 +1,17 @@
 .sidenav-container {
   height: 100%;
-  
+  overflow:hidden !important;
 }
 
 .sidenav {
   width: 200px;
   background: #333333;
+ 
+}
+
+/*---Drawer Hide Scrollbar---*/
+.mat-drawer-inner-container {
+  overflow:hidden !important;
 }
 
 /*---- Horizontal Bar on bar -----*/

@@ -1,8 +1,4 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
-import { ConsoleComponent } from '../console/console.component';
-import { RatesComponent } from '../rates/rates.component';
-
-
 
 
 @Component({
@@ -18,9 +14,6 @@ export class GachaponComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  
-  //DEFAULT COMPONENTS
  
   
 }

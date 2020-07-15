@@ -1,12 +1,12 @@
 
 .tab-content {
-    display: flex;
-    margin-top: 15%;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: row;
-    align-items: center;
+  
+  margin-top: 15%;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  align-items: center;
+
 }
 
 body, html {
@@ -23,26 +23,60 @@ body, html {
     outline: none;
     border:none;
 }
+  /*-----CSS GRID for Components-----*/
 
+  /*---DESKTOP VIEW---*/
 .tab:hover {
     background-color: #777;
   }
 
 
+
 .left-half {  
-   
-    position: relative;
-    width: 50%;
+    grid-area: left; 
 }
   
 .right-half {
-    position: relative;
-    width: 50%;
+    grid-area: right;    
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "left right";
+}
+/*---DESKTOP VIEW END---*/
+
+/*--MOBILE VIEW---*/
+@media screen and (max-width: 813px){
+    .grid {
+      display: grid;
+      grid-template-columns: none;
+      grid-template-rows: 1fr;
+      grid-template-areas: "left" "right";             
+
+    }
+
+    .left-half {  
+      grid-area: left; 
+      width: 80%;
+      margin: auto;
+  }
+    
+  .right-half {
+      grid-area: right;    
+      width: 100%;
+      margin: auto;
+  }
+}
+
+/*--MOBILE VIEW---*/
 
 
-/* Scrollbar styles */
+/*-----CSS GRID for Components END-----*/
+
+
+/*--------------Scrollbar styles----------------*/
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -56,6 +90,7 @@ body, html {
   outline: 1px solid slategrey;
  
 }
+/*-------------Scrollbar styles END-----------*/
 
 /* ------------------Gachapon/Rates NAVBAR ----------------*/
 
@@ -93,5 +128,5 @@ body, html {
   overflow: hidden !important;
  
 }
-/* ------------------Gachapon/Rates NAVBAR ----------------*/
+/* ------------------Gachapon/Rates NAVBAR END----------------*/
 
