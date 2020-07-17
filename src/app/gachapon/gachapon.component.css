@@ -4,7 +4,7 @@
   margin-top: 15%;
   margin: 82px auto 32px;
   padding: 0 16px;
-  max-width: 960px;
+  max-width: 85%;
   align-items: center;
 
 }
@@ -13,6 +13,7 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial;
+  
 }
 
 .tab {
@@ -34,6 +35,7 @@ body, html {
 
 .left-half {  
     grid-area: left; 
+
 }
   
 .right-half {
@@ -42,8 +44,8 @@ body, html {
 
 .grid {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-areas: "left right";
+  grid-template-columns: auto 5% 50%;
+  grid-template-areas: "left space right";
 }
 /*---DESKTOP VIEW END---*/
 
@@ -61,13 +63,17 @@ body, html {
       grid-area: left; 
       width: 80%;
       margin: auto;
+      padding-bottom: 10%;
+      
   }
     
   .right-half {
       grid-area: right;    
-      width: 100%;
+      width: 80%;
       margin: auto;
   }
+
+  
 }
 
 /*--MOBILE VIEW---*/
