@@ -20,6 +20,7 @@ import { RatesComponent } from './rates/rates.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { GachaUIComponent } from './gacha-ui/gacha-ui.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

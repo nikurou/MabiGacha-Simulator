@@ -3,8 +3,7 @@
 <div class = "gachaUI">
 
     <div class = "gachaTitle">
-    
-        <p>You selected: {{selected}}</p>
+      test
     </div>
     
     <div class = "gachaImage">
@@ -12,43 +11,12 @@
     </div>
 
     <div class = "gachaButtons">
-        <button mat-raised-button color="gray">Gach! </button>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
      </div>
-    
-    <div class = "gachaSelector">
-        <mat-form-field appearance="fill">
-            <mat-label>Choose a gachapon</mat-label>
-            <mat-select [(value)]="selected">
-              <mat-option>None</mat-option>
-              <mat-option value="Secret Garden Box">Secret Garden Box</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
-  
-    <div class = "amountSelector">
-        <mat-form-field appearance="fill">
-            <mat-label> How many to gach?: </mat-label>
-            <mat-select >
-              <mat-option>None</mat-option>
-              <mat-option value="Secret Garden Box">Secret Garden Box</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
-    <div class = "uniqueSelector">
-        <mat-form-field appearance="fill">
-            <mat-label> Specific Item?</mat-label>
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option value="Secret Garden Box">Secret Garden Box</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
     <br>
 
  

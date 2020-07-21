@@ -1,5 +1,5 @@
 .gachaUI{
-  
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
   background-color:  rgb(38,38,38);
   
@@ -12,20 +12,12 @@
                       "image image image" 
                       "button button button"
                       "selector amount unique";
-
 }
 
-.mat-gray{ /*Button colour*/
-    color: gray;
-    background-color:  rgb(61, 61, 60);
-    width:100%;
-    
-}
 .gachaTitle{
     grid-area: title;
     color: white;
     background-color:  black;
-    
     padding-top: 1vh;
     padding-left: 1vh;
     font-family: Arial, Helvetica, sans-serif;
@@ -33,11 +25,9 @@
     text-shadow: 0px 1px black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    
 }
 .gachaImage {
     grid-area: image;
-    background-color:  rgb(38,38,38);
     padding-left: 35%;
 }
 
@@ -46,34 +36,22 @@
     width: 20vh;
 }
 .gachaButtons{
+    grid-area: button;
     padding-left: 2vh;
     padding-right: 2vh;
-    grid-area: button;
-    background-color:  rgb(38,38,38);
-
 }
 
-.gachaSelector{
-  grid-area: selector;
-  color: green !important;
-  padding-right: 1vh;
-  padding-left: 2vh;
- 
-}
-
-.amountSelector{
-    grid-area: amount;
-    padding-right: 1vh;
-
-}
-
-.uniqueSelector{
-    grid-area: unique;
-    padding-right: 2vh;
-    background-color:  rgb(38,38,38);
+.mat-button{
+    background-color: rgb(60,60,60);
+    color: white;
     
 }
 
-.mat-form-field-appearance-fill .mat-form-field-underline::before {
-    background-color: rgba(200, 200, 0, 0.42) !important;
+::ng-deep .mat-menu-panel {
+    background-color:  rgb(60,60,60);
+}
+
+.mat-menu-item {
+    color: white;
+   
 }
