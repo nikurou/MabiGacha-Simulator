@@ -1,36 +1,35 @@
-
-
-<div class = "gachaUI">
-
-    <div class = "gachaTitle">
-      Secret Garden Box
-    </div>
-    
-    <div class = "gachaImage">
-        <img src= "https://cdn.discordapp.com/attachments/340241172205404160/733472950556164186/mabinogi-secret-garden-box-webicon.png"> 
-    </div>
-
-    <div class = "gachaChangeBtn">
-      <button mat-button [matMenuTriggerFor]="menu">Change Gachapon</button>
+<mat-card class="gacha-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      <button mat-button [matMenuTriggerFor]="menu">Secret Garden Box <img
+          src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Item 1</button>
         <button mat-menu-item>Item 2</button>
       </mat-menu>
-     </div>
+    </mat-card-title>
+    <mat-card-subtitle>Current Expenditure: # Number of Gacha's: #</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image
+    src="https://cdn.discordapp.com/attachments/340241172205404160/733472950556164186/mabinogi-secret-garden-box-webicon.png"
+    alt="Photo of a gachapon">
 
-     <div class = "gachaAmountBtn">
-        <button mat-button [matMenuTriggerFor]="menu">Change Gachapon</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Item 1</button>
-          <button mat-menu-item>Item 2</button>
-        </mat-menu>
-         
-     </div>
+  <mat-card-content>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Options">
+        <app-options></app-options>
+      </mat-tab>
+      <mat-tab label="Console">
+        <app-console></app-console>
+      </mat-tab>
+      <mat-tab label="Rates">
+        <app-rates></app-rates>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 
-    
-     
-
-   
-    
-</div>
-
+  <mat-card-actions>
+    <button mat-button>GACH</button>
+  </mat-card-actions>
+</mat-card>
