@@ -4,14 +4,15 @@
   background-color:  rgb(38,38,38);
   
   width:100%;
-
+  row-gap: 1vh; 
   display: grid;
 
   grid-template-columns: 33% 33% auto;
   grid-template-areas: "title title title"
-                      "image image image" 
-                      "button button button"
-                      "selector amount unique";
+                        "image image image" 
+                        "changeBtn changeBtn changeBtn"
+                        "amountBtn amountBtn space"
+                        ;
 }
 
 .gachaTitle{
@@ -25,6 +26,7 @@
     text-shadow: 0px 1px black;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: 100%;
 }
 .gachaImage {
     grid-area: image;
@@ -35,8 +37,15 @@
     height: 20vh;
     width: 20vh;
 }
-.gachaButtons{
-    grid-area: button;
+
+.gachaChangeBtn{
+    grid-area: changeBtn;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+.gachaAmountBtn{
+    grid-area: amountBtn;
     padding-left: 2vh;
     padding-right: 2vh;
 }
@@ -44,6 +53,7 @@
 .mat-button{
     background-color: rgb(60,60,60);
     color: white;
+    width: 100%;
     
 }
 
@@ -53,5 +63,4 @@
 
 .mat-menu-item {
     color: white;
-   
 }
