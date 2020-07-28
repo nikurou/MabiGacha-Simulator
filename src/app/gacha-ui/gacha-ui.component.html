@@ -1,20 +1,26 @@
 <mat-card class="gacha-card">
+  
+  <!--Card Header-->
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>
-      <button mat-button [matMenuTriggerFor]="menu">Secret Garden Box <img
-          src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
+      <button mat-button [matMenuTriggerFor]="menu"> {{selectedGachapon}} <img
+        src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
+        <button mat-menu-item *ngFor = "let gachapon of gachapons" [value] = "gachapon" (click) = "selectedItem(gachapon)"> 
+          {{gachapon}}
+        </button>
       </mat-menu>
     </mat-card-title>
     <mat-card-subtitle>Current Expenditure: # Number of Gacha's: #</mat-card-subtitle>
   </mat-card-header>
+
+  <!--Gachapon's Image-->
   <img mat-card-image
     src="https://cdn.discordapp.com/attachments/340241172205404160/733472950556164186/mabinogi-secret-garden-box-webicon.png"
     alt="Photo of a gachapon">
 
+  <!--Tab Displays (Component Switcher)-->
   <mat-card-content>
     <mat-tab-group animationDuration="0ms">
       <mat-tab label="Options">
@@ -29,6 +35,7 @@
     </mat-tab-group>
   </mat-card-content>
 
+  <!--The Gach Button-->
   <mat-card-actions>
     <button mat-button (click) = "onClick()">GACH</button>
   </mat-card-actions>

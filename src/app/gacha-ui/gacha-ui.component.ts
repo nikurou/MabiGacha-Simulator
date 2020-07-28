@@ -7,13 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GachaUIComponent implements OnInit {
 
-  constructor() { }
+  selectedGachapon: string;
+  gachapons: string[] = ['Secret Garden Box', 'Winter Fairy Box', 'Forest Ranger Bag', 'Frozen Heart Gachapon', 'Eweca Orb',
+                          'Crow Feather Box'];
 
-  ngOnInit(): void {
+  constructor() { 
+
   }
 
+  ngOnInit(): void {
+    this.selectedGachapon = this.gachapons[0];
+  }
+
+  selectedItem(gacha: string){
+    this.selectedGachapon = gacha;
+  }
+
+  /* If the user is not already on console tab, switch them to console tab */
   onClick(){
-    alert("You clicked me!");
+    
   }
 
 }
