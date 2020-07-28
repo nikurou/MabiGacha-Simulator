@@ -17,11 +17,9 @@
                     <label for="browser">Gach until specified item appears: </label>
                     <input list="items">
                     <datalist id="items">
-                        <option value="item1">
-                        <option value="item2">
-                        <option value="item3">
-                        <option value="item4">
-                        <option value="item5">
+                        <option *ngFor ="let item of items" [value] ="item">
+                            {{item}}
+                        </option>
                     </datalist>
                 </form>
           </mat-radio-button>

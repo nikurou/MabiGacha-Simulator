@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsComponent implements OnInit {
   selected = '1';
-  setCheckbox = true;
+  
+  selectedItem: string;
+  items: string[] = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  
 
 }
