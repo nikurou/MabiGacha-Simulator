@@ -12,4 +12,8 @@ export class GachaUIComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+    alert("You clicked me!");
+  }
+
 }

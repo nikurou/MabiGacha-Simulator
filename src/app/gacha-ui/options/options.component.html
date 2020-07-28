@@ -1,4 +1,31 @@
+<div class="options">
+    <p> Please select your preferences from the following options: </p>
+    <div class="inner-options">
+        <mat-radio-group class="options-list" >
+            <mat-radio-button value="1">
+                <label for="quantities">Gach in quantities of: </label>
+                <select id="quantities" name="quantities" [(value)]="selected">
+                    <option value="1"> 1</option>
+                    <option value="5"> 5</option>
+                    <option value="10">10</option>
+                </select>
+          </mat-radio-button>
 
-<div class = "options">
-    <p>options works!</p>
+          <p> <br> OR </p>
+            <mat-radio-button value="2">
+                <form method="get" name="item">
+                    <label for="browser">Gach until specified item appears: </label>
+                    <input list="items">
+                    <datalist id="items">
+                        <option value="item1">
+                        <option value="item2">
+                        <option value="item3">
+                        <option value="item4">
+                        <option value="item5">
+                    </datalist>
+                </form>
+          </mat-radio-button>
+        </mat-radio-group>
+    </div>
 </div>
+

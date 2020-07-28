@@ -21,6 +21,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { GachaUIComponent } from './gacha-ui/gacha-ui.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { OptionsComponent } from './gacha-ui/options/options.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,7 @@ import {MatMenuModule} from '@angular/material/menu';
     ConsoleComponent,
     RatesComponent,
     GachaUIComponent,
-
+    OptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,13 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatListModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule,
+    MatTooltipModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

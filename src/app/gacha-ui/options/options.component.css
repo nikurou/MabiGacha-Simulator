@@ -9,5 +9,36 @@
     font-family:'Courier New', Courier, monospace;
     padding:10px;
     font-size: 1em;
+}
+
+.inner-options{
+    margin-left: 5%;
+}
+
+::ng-deep .mat-checkbox-frame  {
+    border-color: rgba(255, 255, 255, 0.54) !important;
     
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+.radio-button {
+    margin: 5px;
+}
+
+::ng-deep .mat-radio-label-content {
+    font-family:'Courier New', Courier, monospace !important;
+    font-size: 1em;
+}
+
+::ng-deep .mat-radio-outer-circle{
+    border-color: white;
+}
+
+::ng-deep .mat-radio-inner-circle {
+    background-color: white;
 }

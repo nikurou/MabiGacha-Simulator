@@ -1,19 +1,16 @@
 
 .tab-content {
-  
   margin-top: 15%;
   margin: 82px auto 32px;
   padding: 0 16px;
   max-width: 85%;
   align-items: center;
-
 }
 
 body, html {
     height: 100%;
     margin: 0;
     font-family: Arial;
-  
 }
 
 .tab {
@@ -24,62 +21,24 @@ body, html {
     outline: none;
     border:none;
 }
-  /*-----CSS GRID for Components-----*/
 
   /*---DESKTOP VIEW---*/
 .tab:hover {
     background-color: #777;
-  }
-
-
+}
 
 .left-half {  
-    grid-area: left; 
-
-}
-  
-.right-half {
-    grid-area: right;    
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: auto 5% 50%;
-  grid-template-areas: "left space right";
-}
-/*---DESKTOP VIEW END---*/
-
-/*--MOBILE VIEW---*/
-@media screen and (max-width: 813px){
-    .grid {
-      display: grid;
-      grid-template-columns: none;
-      grid-template-rows: 1fr;
-      grid-template-areas: "left" "right";             
-
-    }
-
-    .left-half {  
-      grid-area: left; 
-      width: 80%;
-      margin: auto;
-      padding-bottom: 10%;
-      
-  }
-    
-  .right-half {
-      grid-area: right;    
-      width: 80%;
-      margin: auto;
-  }
-
-  
+    width: 65%;
+    margin: auto;
 }
 
 /*--MOBILE VIEW---*/
-
-
-/*-----CSS GRID for Components END-----*/
+@media screen and (max-width: 800px){
+  .left-half {  
+    width: 100%;
+  }
+}
+/*--MOBILE VIEW---*/
 
 
 /*--------------Scrollbar styles----------------*/
