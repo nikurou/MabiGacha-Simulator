@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-options',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options.component.css']
 })
 export class OptionsComponent implements OnInit {
-  selected = '1';
   
+  @Input() items: string[];
+  
+  selected = '1';
   selectedItem: string;
-  items: string[] = ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'];
+  
 
   constructor() { }
 
