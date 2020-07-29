@@ -5,10 +5,11 @@
     border-radius: 15px;
 }
 
-.example-header-image {
-    background-image: url('https://cdn.discordapp.com/attachments/340241172205404160/733472950556164186/mabinogi-secret-garden-box-webicon.png');
+.header-image {
+    background-image: url('assets\gachapon-images\mabinogi-secret-garden-box-webicon.png');
     background-size: cover;
 }
+
 .mat-button{
   font-size: 1em;
   color: rgb(220, 220, 220);
@@ -22,6 +23,9 @@
 }
 
 .mat-card-image {
+    background-image: url('assets\gachapon-images\mabinogi-secret-garden-box-webicon.png');
+    background-size: cover;
+    
     height: 200px;
     width: 200px;
     margin-top: 5%;

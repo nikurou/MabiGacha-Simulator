@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Gachapon} from './gachapon'
+
 @Component({
   selector: 'app-gacha-ui',
   templateUrl: './gacha-ui.component.html',
@@ -8,19 +10,29 @@ import { Component, OnInit } from '@angular/core';
 export class GachaUIComponent implements OnInit {
 
   selectedGachapon: string;
-  gachapons: string[] = ['Secret Garden Box', 'Winter Fairy Box', 'Forest Ranger Bag', 'Frozen Heart Gachapon', 'Eweca Orb',
-                          'Crow Feather Box'];
+  selectedImage: string;
+  selectedList: string[];
+  
 
-  constructor() { 
+  gachas = [ 
+    new Gachapon('Secret Garden Box', 'assets\gachapon-images\mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
+    new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png', ["item4", "item5", "item6"]),
+    new Gachapon('Winter Fairy Box', 'assets\gachapon-images\mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
+  ]
 
+  constructor() {
+    this.selectedGachapon = this.gachas[0].gachaName;
+    this.selectedImage = this.gachas[0].gachaURL;
+    this.selectedList = this.gachas[0].gachaList;
   }
 
   ngOnInit(): void {
-    this.selectedGachapon = this.gachapons[0];
   }
 
-  selectedItem(gacha: string){
-    this.selectedGachapon = gacha;
+  selectedItem(gacha: any){
+    this.selectedGachapon = gacha.gachaName;
+    this.selectedImage = gacha.gachaURL;
+    this.selectedList = gacha.gachaList;
   }
 
   /* If the user is not already on console tab, switch them to console tab */
