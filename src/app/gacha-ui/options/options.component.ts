@@ -12,7 +12,7 @@ export class OptionsComponent implements OnInit {
   @Input() selectedList: string[];
   
   selected = '1';
-  selectedItem: string;
+  public selectedItem: string;
   
   constructor() { }
 
