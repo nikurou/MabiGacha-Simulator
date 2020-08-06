@@ -27,6 +27,7 @@ import { OptionsComponent } from './gacha-ui/options/options.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatTableModule,
     MatCheckboxModule,
     MatRadioModule,
+    FormsModule,
     
   ],
   providers: [],
