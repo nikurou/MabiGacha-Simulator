@@ -17,12 +17,14 @@
                 <form method="get" name="item">
                     <label for="browser">Gach until specified item appears: </label>
                     
-                    <input list="items">
+                    <!--Strange display bug caused here where other components dont load until I click something-->
+                    <input list="items" >
                     <datalist id="items">
-                        <option *ngFor ="let item of items" [value] ="item">
+                        <option *ngFor ="let item of selectedList" >
                             {{item}}
                         </option>
                     </datalist>
+                    Selected item is....{{selectedItem}}
                 </form>
           </mat-radio-button>
         </mat-radio-group>

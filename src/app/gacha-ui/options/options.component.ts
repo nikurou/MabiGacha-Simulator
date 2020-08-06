@@ -8,18 +8,20 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./options.component.css']
 })
 export class OptionsComponent implements OnInit {
-  
-  @Input() items: string[];
+
+  @Input() selectedList: string[];
   
   selected = '1';
   selectedItem: string;
   
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSelect(e){
+    this.selectedItem = e.target.value;
+  }
   
 
 }
