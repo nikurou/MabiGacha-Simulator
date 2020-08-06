@@ -29,6 +29,7 @@ export class GachaUIComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /* Upon selection of new gachapon update all the properties to the new gachapon.*/
   selectedItem(gacha: any){
     this.selectedGachapon = gacha.gachaName;
     this.selectedImage = gacha.gachaURL;
