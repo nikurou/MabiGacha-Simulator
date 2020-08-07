@@ -28,14 +28,15 @@ body, html {
 }
 
 .left-half {  
-    width: 65%;
+    width: 80%;
     margin: auto;
 }
 
 /*--MOBILE VIEW---*/
-@media screen and (max-width: 800px){
+@media screen and (max-width: 900px){
   .left-half {  
     width: 100%;
+    margin:auto;
   }
 }
 /*--MOBILE VIEW---*/

@@ -21,8 +21,7 @@
             <mat-radio-button value="2">
                 <form method="get" name="item">
                     <label for="browser">Gach until specified item appears: </label>
-                    
-                    <!--Strange display bug caused here where other components dont load until I click something-->
+    
                     <!--Bug where you can select items that do not exist!-->
                     <input type ="text" name="listItems" list="items" [(ngModel)] ="selectedItem" (change) = "onSelect($event)">
                     <datalist id="items">

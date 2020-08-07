@@ -1,7 +1,9 @@
 .console {
+    min-height: 300px;
     height: 300px;
-    width:98.5%;
-  
+    width:98%;
+    overflow: auto;
+    resize: vertical;
     overflow-x: hidden !important; /* Hide horizontal scrollbar */
     background-color:black;
     color:white;

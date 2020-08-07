@@ -1,42 +1,46 @@
 <mat-card class="gacha-card">
-  
+
   <!--Card Header-->
   <mat-card-header>
     <div mat-card-avatar class="header-image"></div>
     <mat-card-title>
       <button mat-button [matMenuTriggerFor]="menu"> {{selectedGachapon}} <img
-        src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
+          src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor = "let gacha of gachas" [value] = "gacha" (click) = "selectedItem(gacha)"> 
+        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha)">
           {{gacha.gachaName}}
-          <app-options [items]= "selectedList"></app-options>
-        </button> 
-       
+          <app-options [items]="selectedList"></app-options>
+        </button>
+
       </mat-menu>
     </mat-card-title>
     <mat-card-subtitle>Current Expenditure: # Number of Gacha's: #</mat-card-subtitle>
   </mat-card-header>
-  
+
   <!--Gachapon's Image-->
-  <img mat-card-image src= {{selectedImage}} >
+  <img mat-card-image src={{selectedImage}}>
 
   <!--Tab Displays (Component Switcher)-->
-  <mat-card-content>
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="Options">
-        <app-options [selectedList] = "selectedList"></app-options> <!---Pass the selectedItem's List[] to Opt Component-->
-      </mat-tab>
-      <mat-tab label="Console">
-        <app-console></app-console>
-      </mat-tab>
-      <mat-tab label="Rates">
-        <app-rates></app-rates>
-      </mat-tab>
-    </mat-tab-group>
-  </mat-card-content>
+    <mat-card-content>
+      
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Options">
+          <!---Pass the selectedItem's List[] to Opt Component-->
+          <app-options [selectedList]="selectedList"></app-options>
+        </mat-tab>
+        <mat-tab label="Console">
+          <app-console></app-console>
+        </mat-tab>
+        <mat-tab label="Rates">
+          <app-rates></app-rates>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+
+
 
   <!--The Gach Button-->
   <mat-card-actions>
-    <button mat-button (click) = "onClick()">GACH</button>
+    <button mat-button (click)="onClick()">GACH</button>
   </mat-card-actions>
 </mat-card>

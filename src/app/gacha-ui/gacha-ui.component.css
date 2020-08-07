@@ -1,8 +1,9 @@
 .gacha-card {
     background-color: rgb(51,51,51);
     box-shadow: 5px 5px 10px #888888;
-    width: 100%;
     border-radius: 15px;
+    overflow: vertical;
+    margin: auto;
 }
 
 .header-image {
@@ -25,7 +26,6 @@
 .mat-card-image {
     background-image: url('assets\gachapon-images\mabinogi-secret-garden-box-webicon.png');
     background-size: cover;
-    
     height: 200px;
     width: 200px;
     margin-top: 5%;

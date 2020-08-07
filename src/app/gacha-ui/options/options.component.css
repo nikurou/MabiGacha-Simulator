@@ -1,7 +1,7 @@
 .options {
-    height: 300px;
-    width:98.5%;
-  
+    min-height: 300px;
+    width:98%;
+    resize:vertical;
     overflow-x: hidden !important; /* Hide horizontal scrollbar */
     overflow-y: hidden !important; /* Hide vertical scrollbar */
     background-color:black;
