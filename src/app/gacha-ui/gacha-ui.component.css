@@ -34,10 +34,7 @@
     display: block;
 }
 
-.mat-card-image img[src=""] 
-{ 
-    content:url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="); 
-}
+
 
 
 .mat-card-content{
