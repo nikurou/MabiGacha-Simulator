@@ -18,11 +18,11 @@
   </mat-card-header>
 
   <!--Gachapon's Image-->
-  <img mat-card-image src={{selectedImage}}>
+  <img mat-card-image style = "background-image: url( '{{selectedImage}}' );">
 
   <!--Tab Displays (Component Switcher)-->
     
-      <mat-tab-group dynamicHeight animationDuration="0ms" >
+      <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
           <app-options [selectedList]="selectedList"></app-options>
@@ -35,11 +35,9 @@
         </mat-tab>
       </mat-tab-group>
 
-
-
-
   <!--The Gach Button-->
   <mat-card-actions>
-    <button mat-button (click)="onClick()">GACH</button>
+    <!--On Click, make it go to the Console Tab-->
+    <button mat-button (click)="tabGroup.selectedIndex=1; gach();">GACH</button> 
   </mat-card-actions>
 </mat-card>
