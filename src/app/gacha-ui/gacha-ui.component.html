@@ -21,9 +21,8 @@
   <img mat-card-image src={{selectedImage}}>
 
   <!--Tab Displays (Component Switcher)-->
-    <mat-card-content>
-      
-      <mat-tab-group animationDuration="0ms">
+    
+      <mat-tab-group dynamicHeight animationDuration="0ms" >
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
           <app-options [selectedList]="selectedList"></app-options>
@@ -35,7 +34,7 @@
           <app-rates></app-rates>
         </mat-tab>
       </mat-tab-group>
-    </mat-card-content>
+
 
 
 
