@@ -24,7 +24,6 @@
 }
 
 .mat-card-image {
-  
     background-size: cover;
     height: 200px;
     width: 200px;
@@ -34,6 +33,12 @@
     margin-right: auto;
     display: block;
 }
+
+.mat-card-image img[src=""] 
+{ 
+    content:url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="); 
+}
+
 
 .mat-card-content{
     background-color: rgb(58,58,58);

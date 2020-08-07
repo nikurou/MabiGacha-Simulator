@@ -15,9 +15,9 @@ export class GachaUIComponent implements OnInit {
   
 
   gachas = [ 
-    new Gachapon('Secret Garden Box', "assets\\gachapon-images\\mabinogi-secret-garden-box-webicon.png", ["item1", "item2", "item3"]),
+    new Gachapon('Secret Garden Box', 'mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
     new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png', ["item4", "item5", "item6"]),
-    new Gachapon('Winter Fairy Box', 'assets\\gachapon-images\\mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
+    new Gachapon('Winter Fairy Box', 'mabinogi-secret-garden-box-webicon.png', ["test1", "test2", "test3"]),
   ]
 
   constructor() {
@@ -30,7 +30,7 @@ export class GachaUIComponent implements OnInit {
   }
 
   /* Upon selection of new gachapon update all the properties*/
-  selectedItem(gacha: any){
+  selectedItem(gacha: Gachapon){
     this.selectedGachapon = gacha.gachaName;
     this.selectedImage = gacha.gachaURL;
     this.selectedList = gacha.gachaList;
@@ -39,7 +39,7 @@ export class GachaUIComponent implements OnInit {
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach(){
     /* LOGIC HERE */
-     
+    
   }
 
 }
