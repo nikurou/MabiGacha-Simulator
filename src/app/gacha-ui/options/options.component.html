@@ -2,26 +2,22 @@
     
     <p> Please select your preferences from the following options: </p>
     <div class="inner-options">
-        <mat-radio-group class="options-list" >
+        <mat-radio-group class="options-list" [(ngModel)] = "selectedOption" >
             <!--OPTION ONE-->
-            <mat-radio-button value="1">
+            <mat-radio-button value = "bulk" (change)="radioChange('bulk')"> 
                 <label for="quantities">Gach in quantities of: </label>
-                <select id="quantities" name="quantities">
-                    <option value="1" > 1</option>
+                <select name = "quantities" id="quantities" [(ngModel)] = "quantity">
+                    <option value="1" selected> 1</option>
                     <option value="5" > 5 </option>
                     <option value="10" >10</option>
-                    <!--Still need to make it so that you can show which option was selected-->
                 </select>
-                
           </mat-radio-button>
-
-
+          
           <p> <br> OR </p>
           <!--OPTION TWO-->
-            <mat-radio-button value="2">
+            <mat-radio-button value= "specific" (change)="radioChange('specific')">
                 <form method="get" name="item">
                     <label for="browser">Gach until specified item appears: </label>
-    
                     <!--Bug where you can select items that do not exist!-->
                     <input type ="text" name="listItems" list="items" [(ngModel)] ="selectedItem" (change) = "onSelect($event)">
                     <datalist id="items">
@@ -29,11 +25,16 @@
                             {{item}}
                         </option>
                     </datalist>
-                    Selected item is....{{selectedItem}}
-                    
                 </form>
           </mat-radio-button>
         </mat-radio-group>
+
+        <!--Temporary Printout Log to test variables-->
+        <br><br>
+        <div>Your selected option is: {{selectedOption}}</div>
+        <div> Selected item is....{{selectedItem}} </div>
+        <div> You gached in bulk of...{{trueQuantity}}</div>
+
     </div>
 </div>
 

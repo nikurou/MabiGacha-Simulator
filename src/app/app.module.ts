@@ -22,7 +22,6 @@ import { GachaUIComponent } from './gacha-ui/gacha-ui.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
-import {MatTooltipModule} from '@angular/material/tooltip';
 import { OptionsComponent } from './gacha-ui/options/options.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -56,7 +55,6 @@ import {FormsModule} from '@angular/forms';
     MatSelectModule,
     MatMenuModule,
     MatCardModule,
-    MatTooltipModule,
     MatTableModule,
     MatCheckboxModule,
     MatRadioModule,
