@@ -15,9 +15,9 @@ export class GachaUIComponent implements OnInit {
   
 
   gachas = [ 
-    new Gachapon('Secret Garden Box', 'mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
+    new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
     new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png', ["item4", "item5", "item6"]),
-    new Gachapon('Winter Fairy Box', 'mabinogi-secret-garden-box-webicon.png', ["test1", "test2", "test3"]),
+    new Gachapon('Winter Fairy Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', ["test1", "test2", "test3"]),
   ]
 
   constructor() {

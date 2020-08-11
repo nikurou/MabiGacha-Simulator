@@ -7,7 +7,6 @@
 }
 
 .header-image {
-    background-image: url('assets\gachapon-images\mabinogi-secret-garden-box-webicon.png');
     background-size: cover;
 }
 
@@ -33,9 +32,6 @@
     margin-right: auto;
     display: block;
 }
-
-
-
 
 .mat-card-content{
     background-color: rgb(58,58,58);

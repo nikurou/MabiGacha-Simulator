@@ -9,7 +9,7 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha)">
           {{gacha.gachaName}}
-          <app-options [items]="selectedList"></app-options>
+          <app-options [selectedList]="selectedList"></app-options>
         </button>
 
       </mat-menu>
