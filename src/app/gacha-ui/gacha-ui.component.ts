@@ -11,7 +11,18 @@ export class GachaUIComponent implements OnInit {
 
   selectedGachapon: string;
   selectedImage: string;
-  selectedList: string[];
+  selectedList: string[]; //NEEDS TO COME FROM ".TXT" file
+
+  selectedTxtFile: string; // Name of the .txt that holds the rates/item name
+                           // Create method in gacha-logic.ts class that takes thsi file and then returns gachaList[] and gachaPool[]
+                              /*
+                               * gachaLogic g1 = new gachaLogic("text.txt");
+                               * selectedList[] =  g1.getSelectedList();
+                               * gachaPool[] = g1. getGachaPool
+                               */
+                            // GachaList[] needed STILL so that the dropdown menu for specific item still displays all the items
+                            // GachaPool necessary to randomly pick item from it in gach(); below
+                            // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
   
 
   gachas = [ 
