@@ -18,6 +18,7 @@ export class Gachapon{
         this.gachaURL = gachaURL;
 
         this.gachaList = [];
+        
         axios.get(`http://localhost:5000/gacha/${gachaName}`)
         .then(res => {
             for(let i = 1; i < res.data.length;i+=2){

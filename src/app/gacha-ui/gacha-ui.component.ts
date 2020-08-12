@@ -11,7 +11,7 @@ declare const gachaLogic: any;
 @Component({
   selector: 'app-gacha-ui',
   templateUrl: './gacha-ui.component.html',
-  styleUrls: ['./gacha-ui.component.css']
+  styleUrls: ['./gacha-ui.component.css'],
 })
 export class GachaUIComponent {
 
@@ -24,8 +24,6 @@ export class GachaUIComponent {
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
   @ViewChild('child') child:OptionsComponent;
-
-  
 
   gachas = [
     new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png'),
@@ -56,8 +54,7 @@ export class GachaUIComponent {
 
 
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
-  gach() {
-    
+  gach() {    
     //alert("test: " + this.serverStringURL);
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     axios.get(this.serverStringURL)

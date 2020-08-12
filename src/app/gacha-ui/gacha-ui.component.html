@@ -27,7 +27,7 @@
       <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
-          <app-options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)"></app-options>
+          <app-options #options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)"></app-options>
         </mat-tab>
         <mat-tab label="Console">
           <app-console></app-console>
@@ -40,6 +40,7 @@
   <!--The Gach Button-->
   <mat-card-actions>
     <!--On Click, make it go to the Console Tab-->
-    <button mat-button (click)="tabGroup.selectedIndex=1; gach();" >GACH</button> 
+    <!--When this button is clicked, it changes tab to Console Tab, Builds/Sends link to Parent, and calls gach()-->
+    <button mat-button (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach();" >GACH</button> 
   </mat-card-actions>
 </mat-card>
