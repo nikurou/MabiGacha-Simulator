@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Gachapon} from './gachapon'
+import {Gachapon} from './gacha-logic'
 
 @Component({
   selector: 'app-gacha-ui',
