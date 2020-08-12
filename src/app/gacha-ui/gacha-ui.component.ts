@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 
 import {Gachapon} from './gacha-logic'
 
+declare const gachaLogic:any;
+
 @Component({
   selector: 'app-gacha-ui',
   templateUrl: './gacha-ui.component.html',
   styleUrls: ['./gacha-ui.component.css']
 })
 export class GachaUIComponent implements OnInit {
-
+  
+  currentGachaObject: Gachapon;
   selectedGachapon: string;
   selectedImage: string;
   selectedList: string[]; //NEEDS TO COME FROM ".TXT" file
@@ -26,31 +29,35 @@ export class GachaUIComponent implements OnInit {
   
 
   gachas = [ 
-    new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', ["item1", "item2", "item3"]),
-    new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png', ["item4", "item5", "item6"]),
-    new Gachapon('Winter Fairy Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', ["test1", "test2", "test3"]),
+    new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', "src/assets/gacha-txt/Forest_Ranger_Bag_Gachapon.txt"),
+    new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png', "src/assets/gacha-txt/Forest_Ranger_Bag_Gachapon.txt"),
+    new Gachapon('Winter Fairy Box', 'assets/img/mabinogi-secret-garden-box-webicon.png', "src/assets/gacha-txt/Forest_Ranger_Bag_Gachapon.txt"),
   ]
 
   constructor() {
+    this.currentGachaObject = this.gachas[0];
     this.selectedGachapon = this.gachas[0].gachaName;
     this.selectedImage = this.gachas[0].gachaURL;
     this.selectedList = this.gachas[0].gachaList;
+    this.selectedTxtFile = this.gachas[0].gachaText;
   }
 
   ngOnInit(): void {
+    
   }
 
   /* Upon selection of new gachapon update all the properties*/
   selectedItem(gacha: Gachapon){
+    this.currentGachaObject = gacha;
     this.selectedGachapon = gacha.gachaName;
     this.selectedImage = gacha.gachaURL;
     this.selectedList = gacha.gachaList;
   }
+  
 
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach(){
-    /* LOGIC HERE */
-    
+    gachaLogic("test");
   }
 
 }
