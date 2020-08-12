@@ -1,12 +1,13 @@
 const router = require('express').Router();
 const fs = require('fs');
-const { SignatureKind } = require('typescript');
+
 
 function gachaLogic(fileName){
     let numGach;
     let totalNX, totalUSD;
     let gachPool = [];
     this.fileName = fileName;
+    let generalList = [];
 
     this.readFile = function(){
         return new Promise(function (resolve, reject) {
@@ -17,22 +18,30 @@ function gachaLogic(fileName){
                     temp = data.toString().split(/%\t|\n/); 
                     for(let i = 0; i < temp.length;i+=2){
                         let numItem = temp[i] * 10;
+                        generalList.push(temp[i]+'%');
                         //console.log(numItem);
-                        let itemToAdd = temp[i+1];
+                        let itemToAdd; 
+                        if(i < temp.length-2){
+                            itemToAdd = temp[i+1].substring(0,temp[i+1].length-1);
+                        }else{
+                            itemToAdd = temp[i+1];
+                        }
+                        generalList.push(itemToAdd);
                         //console.log(itemToAdd);
                         for(let j = 0; j < numItem;j++){
-                            gachPool.push(itemToAdd.substring(0,itemToAdd.length-1));
+                            gachPool.push(itemToAdd);
                         }
                     }
                     resolve(gachPool);
                 }
-                
-
-
             }); 
         });
     }
-        
+    
+    this.getList = function(){
+        return generalList;
+    }
+    
     this.isInList = function(item){
         return gachaPool.contains(item);
     }
@@ -78,6 +87,21 @@ function gachaLogic(fileName){
 	}
 }
 
+router.route('/:gachaName/').get((req, res) => {
+    let general;
+    switch(req.params.gachaName){
+        case "Forest Ranger Bag Gachapon": 
+            general = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
+            let promise = general.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(general.getList());
+                },
+                (err) => {throw err}
+            );
+            break;
+    }
+});
 
 router.route('/bulk/:gachaName/:number').get((req, res) => {
     let bulk;
