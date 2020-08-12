@@ -153,7 +153,7 @@ router.route('/bulk/:gachaName/:number').get((req, res) => {
             promise = gacha.readFile();
             promise.then( 
                 ()=>{
-                    return res.json(general.bulkGach(req.params.number));
+                    return res.json(gacha.bulkGach(req.params.number));
                 },
                 (err) => {throw err}
             );
