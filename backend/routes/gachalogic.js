@@ -88,14 +88,35 @@ function gachaLogic(fileName){
 }
 
 router.route('/:gachaName/').get((req, res) => {
-    let general;
+    let gacha;
+    let promise; 
     switch(req.params.gachaName){
         case "Forest Ranger Bag Gachapon": 
-            general = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
-            let promise = general.readFile();
+            gacha = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
+            promise = gacha.readFile();
             promise.then( 
                 ()=>{
-                    return res.json(general.getList());
+                    return res.json(gacha.getList());
+                },
+                (err) => {throw err}
+            );
+            break;
+        case "Secret Garden Box": 
+            gacha = new gachaLogic("textfiles/Secret_Garden_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(gacha.getList());
+                },
+                (err) => {throw err}
+            );
+            break;
+        case "Crow Feather Box": 
+            gacha = new gachaLogic("textfiles/Crow_Feather_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(gacha.getList());
                 },
                 (err) => {throw err}
             );
@@ -104,36 +125,76 @@ router.route('/:gachaName/').get((req, res) => {
 });
 
 router.route('/bulk/:gachaName/:number').get((req, res) => {
-    let bulk;
+    let gacha;
+    let promise; 
     switch(req.params.gachaName){
         case "Forest Ranger Bag Gachapon": 
-            bulk = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
-            let promise = bulk.readFile();
+            gacha = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
+            promise = gacha.readFile();
             promise.then( 
                 ()=>{
-                    return res.json(bulk.bulkGach(req.params.number));
+                    return res.json(gacha.bulkGach(req.params.number));
                 },
                 (err) => {throw err}
             );
             break;
-
+        case "Secret Garden Box": 
+            gacha = new gachaLogic("textfiles/Secret_Garden_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(gacha.bulkGach(req.params.number));
+                },
+                (err) => {throw err}
+            );
+            break;    
+        case "Crow Feather Box": 
+            gacha = new gachaLogic("textfiles/Crow_Feather_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(general.bulkGach(req.params.number));
+                },
+                (err) => {throw err}
+            );
+            break;
     }
 });
 
 router.route('/single/:gachaName/:itemName').get((req, res) => {
-    let single;
+    let gacha;
+    let promise; 
     switch(req.params.gachaName){
         case "Forest Ranger Bag Gachapon": 
-            single = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
-            let promise = single.readFile();
+            gacha = new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt");
+            promise = gacha.readFile();
             promise.then( 
                 ()=>{
-                    return res.json(single.singleGach(req.params.itemName));
+                    return res.json(gacha.singleGach(req.params.itemName));
                 },
                 (err) => {throw err}
             );
             break;
-
+        case "Secret Garden Box": 
+            gacha = new gachaLogic("textfiles/Secret_Garden_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(gacha.singleGach(req.params.itemName));
+                },
+                (err) => {throw err}
+            );
+            break;
+        case "Crow Feather Box": 
+            gacha = new gachaLogic("textfiles/Crow_Feather_Box_Gachapon.txt");
+            promise = gacha.readFile();
+            promise.then( 
+                ()=>{
+                    return res.json(gacha.singleGach(req.params.itemName));
+                },
+                (err) => {throw err}
+            );
+            break;            
     }
 });
 

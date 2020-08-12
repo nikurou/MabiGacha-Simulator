@@ -1,0 +1,143 @@
+0.11%	Abyssal Crow Wings
+0.11%	Midnight Crow Wings
+0.11%	Dynamic Crow Wings
+0.11%	Abyssal Raven Wings
+0.11%	Midnight Raven Wings
+0.11%	Dynamic Raven Wings
+0.12%	Abyssal Crow Feather Halo
+0.12%	Dynamic Crow Feather Halo
+0.12%	Midnight Crow Feather Halo
+0.12%	Special Crow Feather Suit (M)
+0.12%	Special Crow Feather Dress (F)
+0.21%	Crow Feather Suit (M)
+0.21%	Crow Feather Dress (F)
+0.16%	Crow Feather Wig (M)
+0.20%	Crow Feather Wig and Headband (M)
+0.16%	Crow Feather Wig (F)
+0.20%	Crow Feather Wig and Headband (F)
+0.29%	Crow Feather Gloves (M)
+0.29%	Crow Feather Gloves (F)
+0.29%	Crow Feather Boots (M)
+0.29%	Crow Feather Boots (F)
+0.18%	Spirit Transformation Liqueur (Black Fog)
+0.18%	Spirit Transformation Liqueur (Crow Feathers)
+0.18%	Spirit Transformation Liqueur (Black Crows)
+0.18%	Spirit Transformation Liqueur (White Crows)
+0.10%	Special Hand of Death 2nd Title Coupon
+0.10%	Special Dark Dynamis 2nd Title Coupon
+0.10%	Special Voidal Butterfly 2nd Title Coupon
+0.21%	Hand of Death 2nd Title Coupon
+0.21%	Dark Dynamis 2nd Title Coupon
+0.21%	Voidal Butterfly 2nd Title Coupon
+0.21%	Cloaked in Shadows 2nd Title Coupon
+0.21%	Stalked By Shadows 2nd Title Coupon
+0.21%	One with the Shadows 2nd Title Coupon
+0.20%	Divine Demigod Suit (M)
+0.20%	Divine Demigod Suit (F)
+0.20%	Special Adorable Pintuck Suit (M)
+0.20%	Special Adorable Frill Dress (F)
+0.25%	Cessair Commander Outfit (Reforged Rank 1)
+0.25%	Cessair Officer Robe
+0.23%	Adventurer Robe (M)
+0.23%	Adventurer Robe (F)
+0.39%	Crow's Nest Chair
+0.39%	Forlorn Tree Swing
+0.49%	Crow Knuckle Appearance Scroll
+0.49%	Crow Dual Gun Appearance Scroll
+0.49%	Crow Sword Appearance Scroll
+0.29%	Adventurer's L-Rod
+0.25%	Cessair Commander Boots (Reforge Rank 1)
+0.29%	Cessair Commander Gloves (Reforge Rank 1)
+0.59%	Adorable Wig (M)
+0.29%	Adorable Wig (F)
+0.29%	Nuadha Robe (M)
+0.29%	Nuadha Robe (F)
+0.59%	Divine Demigod Glove
+0.39%	Divine Demigod Horn
+0.29%	Divine Demigod Wig (M)
+0.29%	Divine Demigod Wig (F)
+0.33%	Divine Demigod Horn and Wig (M)
+0.33%	Divine Demigod Horn and Wig (F)
+0.59%	Divine Demigod Boots (F)
+0.59%	Divine Demigod Boots (M)
+0.29%	Adorable Pintuck Suit (M)
+0.25%	Adorable Frill Dress (F)
+0.39%	Adorable Wig and Headpiece (F)
+0.59%	Adorable Boots (M)
+0.59%	Adorable Shoes (F)
+0.25%	Royal Control Bar (Reforge Rank 1)
+0.35%	Noble Control Bar (Reforge Rank 1)
+0.49%	Marionette Umbrella
+0.99%	Crow Feather Outfit Dye Ampoule Set
+0.39%	Homestead White Chess Piece Package Box
+0.39%	Homestead Black Chess Piece Package Box
+0.39%	Homestead Black Chess Board Package Box
+0.39%	Homestead White Chess Board Package Box
+0.78%	Left Arm Pillow Gesture Card
+0.78%	Right Arm Pillow Gesture Card
+0.78%	Barf Gesture Card
+0.78%	Cheers Gesture Card
+0.78%	Brass Grandmaster Certificate
+0.68%	Light Physical Power Potion (2 Hours) x5
+0.68%	Light Magic Power Potion (2 Hours) x5
+0.68%	Light Magic Speed Potion (2 Hours) x5
+0.68%	Combat 4x EXP Potion (30 min)
+0.68%	Crystal Hammer of Durability
+0.68%	Lucky Red Upgrade Stone
+0.98%	Complete Skill EXP Potion (1 Day) (Can be traded once)
+1.17%	Crusader 2x EXP Potion (30 min) x5
+0.78%	Sky Blue Prism Box x10
+0.78%	Purple Prism Box
+0.78%	Green Prism Box
+0.78%	Red Prism Box
+0.98%	Splat Gesture Card
+0.98%	Collapse Gesture Card
+0.98%	Tap Dance Gesture Card
+0.98%	Dizzy Gesture Card
+0.98%	Clumsy Gesture Card
+0.98%	Rage Gesture Card
+0.98%	Shiver Gesture Card
+0.98%	Cheer Gesture Card
+0.98%	Stampede Training Potion
+0.98%	Final Strike Training Potion
+1.17%	Control Marionette Training Potion
+1.17%	Pierrot Marionette Training Potion
+1.17%	Colossus Marionette Training Potion
+1.17%	Act 9: Invigorating Encore Training Potion
+1.17%	Puppet's Snare Training Potion
+1.17%	Explosive Kunai Training Potion
+1.17%	Smokescreen Training Potion
+1.17%	Sakura Abyss Training Potion
+1.17%	Rusty Hammer of Proficiency
+1.27%	Homestead Golden Sprout x10
+1.37%	Lorna's Special Gold Coin Box
+1.37%	Pan's Special Gold Coin Box
+1.17%	Fixed Color Dye Ampoule - #000000
+1.17%	Fixed Color Dye Ampoule - #ffffff
+1.56%	Lorna's Goldbox
+1.56%	Pan's Goldbox
+1.56%	Pan's Goldbox Upgrade Coupon
+1.56%	Lorna's Goldbox Upgrade Coupon
+1.56%	Speed Walk Potion 40% (30 min)
+1.56%	Unrestricted Dungeon Pass
+1.56%	Unlimited Shadow Mission Pass
+1.37%	Partner Likeability Increase Candy (30) x5
+1.37%	Partner Stress Relief Candy (100) x5
+1.37%	Act 2: Threshold Cutter Training Potion
+1.37%	Act 1: Inciting Incident Training Potion
+1.37%	Act 4: Rising Action Training Potion
+1.37%	Act 6: Crisis Training Potion
+1.37%	Act 7: Climactic Crash Training Potion
+1.37%	Wire Pull Training Potion
+1.37%	Shuriken Mastery Training Potion
+1.37%	Shuriken Charge Training Potion
+1.37%	Kunai Storm Training Potion
+1.37%	Shadow Bind Training Potion
+1.37%	Fixed Color Dye Ampoule - #16162C
+1.37%	Fixed Color Dye Ampoule - #309DD9
+1.37%	Fixed Color Dye Ampoule - #B7D5E3
+1.37%	Fixed Color Dye Ampoule - #EAA44A
+1.37%	Fixed Color Dye Ampoule - #680618
+1.56%	Potent Shadow Crystal Upgrade Coupon
+1.56%	Potent Fine Shadow Crystal Upgrade Coupon
+1.56%	Potent Finest Shadow Crystal Upgrade Coupon
