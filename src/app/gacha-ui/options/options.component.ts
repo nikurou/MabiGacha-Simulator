@@ -35,9 +35,17 @@ export class OptionsComponent {
     this.selectedOption = "bulk";
   }
 
-  onSelect(e) {
+  onSelect(e, option) {
     this.selectedItem = e.target.value;
-    this.selectedOption = "specific";
+
+    // If you select anything from a dropdown, it automatically changes selected radio option to the respective
+    // option is belongs to..
+    if(option == 'specific'){
+      this.selectedOption = "specific";
+    }
+    if(option == 'bulk'){
+      this.selectedOption = "bulk";
+    }
   }
 
   //Build the link for server
