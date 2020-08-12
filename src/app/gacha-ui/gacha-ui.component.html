@@ -28,7 +28,7 @@
       <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
-          <app-options [selectedList]="selectedList"></app-options>
+          <app-options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon"></app-options>
         </mat-tab>
         <mat-tab label="Console">
           <app-console></app-console>
