@@ -19,14 +19,14 @@ export class GachaUIComponent {
   selectedGachapon: string; //Sent to options component
   selectedImage: string;
   selectedList: string[]; //Sent to options component
+  serverStringURL: string; //Receive from child component
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
   @ViewChild('child') child:OptionsComponent;
 
-  serverStringURL: string;
-
   
+
   gachas = [
     new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png'),
     new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png'),
@@ -43,7 +43,7 @@ export class GachaUIComponent {
   //Receive StringURL built from current options and save it serverStringURL
   receiveFromChild($event) {
     this.serverStringURL = $event;
-    alert("Received: " + this.serverStringURL);
+    console.log("Received: " + this.serverStringURL);
   }
   
   /* Upon selection of new gachapon update all the properties*/
@@ -58,7 +58,7 @@ export class GachaUIComponent {
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach() {
     
-    alert("test: " + this.serverStringURL);
+    //alert("test: " + this.serverStringURL);
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     axios.get(this.serverStringURL)
       .then(res => {

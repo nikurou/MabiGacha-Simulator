@@ -47,7 +47,7 @@ export class OptionsComponent {
       this.serverStringURL = "http://localhost:5000/gacha/" + this.selectedOption + "/" + this.selectedGachapon + "/" + this.trueQuantity;
     }
     if (this.selectedOption == 'specific') {
-      this.serverStringURL = "http://localhost:5000/gacha/" + this.selectedOption + "/" + this.selectedGachapon + "/" + this.selectedItem;
+      this.serverStringURL = "http://localhost:5000/gacha/" + "single" + "/" + this.selectedGachapon + "/" + this.selectedItem;
     }
 
   }
