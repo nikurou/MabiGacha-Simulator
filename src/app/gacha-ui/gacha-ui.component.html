@@ -9,12 +9,11 @@
       <mat-menu #menu="matMenu">
         <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha)">
           {{gacha.gachaName}}
-          <app-options [selectedList]="selectedList"></app-options>
         </button>
 
       </mat-menu>
     </mat-card-title>
-    <mat-card-subtitle>Current Expenditure: # Number of Gacha's: #</mat-card-subtitle>
+    <mat-card-subtitle>Current Expenditure: # Number of Gacha's: # Link: {{serverStringURL}}</mat-card-subtitle>
     
   </mat-card-header>
 
@@ -28,7 +27,7 @@
       <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
-          <app-options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon"></app-options>
+          <app-options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)"></app-options>
         </mat-tab>
         <mat-tab label="Console">
           <app-console></app-console>
@@ -41,6 +40,6 @@
   <!--The Gach Button-->
   <mat-card-actions>
     <!--On Click, make it go to the Console Tab-->
-    <button mat-button (click)="tabGroup.selectedIndex=1; gach();">GACH</button> 
+    <button mat-button (click)="tabGroup.selectedIndex=1; gach();" >GACH</button> 
   </mat-card-actions>
 </mat-card>

@@ -25,7 +25,7 @@ export class OptionsComponent {
   //Function to send message, Link this function to gach() in gacha-ui.component.ts
   sendToParent() {
     this.linkBuilder(); //Build the link one final time before 
-    alert("Solidified: " + this.serverStringURL);
+    //alert("Solidified: " + this.serverStringURL);
     this.messageEvent.emit(this.serverStringURL);
   }
 
