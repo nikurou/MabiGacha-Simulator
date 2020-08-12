@@ -27,7 +27,7 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": ["src/assets/js/gacha.js"]
+            "scripts": []
           },
           "configurations": {
             "production": {
