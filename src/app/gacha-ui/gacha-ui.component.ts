@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {Gachapon} from './gacha-logic'
 
+import axios from 'axios';
+
 declare const gachaLogic:any;
 
 @Component({
@@ -57,7 +59,10 @@ export class GachaUIComponent implements OnInit {
 
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach(){
-    gachaLogic("test");
+    axios.get('http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5')
+    .then(res => {
+        console.log(res.data)
+    });
   }
 
 }
