@@ -18,6 +18,7 @@ export class OptionsComponent {
   public selectedOption: string;  // Option can either be "bulk" or "specific"
 
   public serverStringURL: string;
+  public errorMessage: string; // Tells user if item exist or not.
 
   //Required for sending to Parent Component (gacha-ui)
   @Output() messageEvent = new EventEmitter<string>();
@@ -33,21 +34,22 @@ export class OptionsComponent {
     this.quantity = 1;
     this.trueQuantity = 1;
     this.selectedOption = "bulk";
+    this.errorMessage = "";
   }
 
-  onSelect(e, option) {
-    this.selectedItem = e.target.value;
-
-    // If you select anything from a dropdown, it automatically changes selected radio option to the respective
-    // option is belongs to..
-    if(option == 'specific'){
-      this.selectedOption = "specific";
+  
+  verifyItemExist(selectedItem){
+    //If selected item isnt null AND it's not in the list
+    if(selectedItem!= null && this.selectedList.includes(selectedItem) == false){
+      //Send error message
+      this.errorMessage = "The item you inputted does not exist! Please try again...";
+      //Disable Gach Button
     }
-    if(option == 'bulk'){
-      this.selectedOption = "bulk";
+    else{
+      this.errorMessage = "";
     }
   }
-
+  
   //Build the link for server
   linkBuilder() {
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
@@ -57,23 +59,37 @@ export class OptionsComponent {
     if (this.selectedOption == 'specific') {
       this.serverStringURL = "http://localhost:5000/gacha/" + "single" + "/" + this.selectedGachapon + "/" + this.selectedItem;
     }
-
+    
+  }
+  
+  //On select from dropdown of either radio buttions
+  onSelect(e, option) {
+    // If you select anything from a dropdown, it automatically changes selected radio option to the respective
+    // option is belongs to..
+    if(option == 'specific'){
+      this.selectedOption = "specific";
+      this.selectedItem = e.target.value; //Set the specific item for specific
+      this.verifyItemExist(this.selectedItem);
+    }
+    if(option == 'bulk'){
+      this.selectedOption = "bulk";
+      this.errorMessage = ""; //Clear error message as bulk doesn't use item
+    }
   }
 
   /*
-   * Called when user changes between "bulk" or "specific" gach.
-   * String option is always either "bulk" or "specific".
-   * This function clears out any irrelevant field data that is not necessary
-   * with the selected option.
+  * Called when user changes between "bulk" or "specific" gach.
+  * String option is always either "bulk" or "specific".
+  * This function clears out any irrelevant field data that is not necessary
+  * with the selected option.
   */
-  radioChange(option) {
-
-    // Clear selectedItem
-    if (option == "bulk") {
+ radioChange(option) {
+   
+   // Clear selectedItem
+   if (option == "bulk") {
       this.selectedItem = null;
       this.trueQuantity = this.quantity; //Set trueQuantity to currently displayed value on the dropdown. 
-      // This way, even though we clear trueQuantity when switching to "specific", 
-      // Switching back to bulk, gives us our old value where we left off.
+      this.errorMessage = ""; //Clear error message bulk doesn't use items
     }
 
     // Clear quantity 

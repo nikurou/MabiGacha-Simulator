@@ -55,7 +55,9 @@ export class GachaUIComponent {
 
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach() {    
-    //alert("test: " + this.serverStringURL);
+    
+    //If 
+
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     axios.get(this.serverStringURL)
       .then(res => {
