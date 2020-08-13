@@ -1,6 +1,14 @@
 
 <div class ="loot-container">
-    <h1> A collection of your loot... </h1>
+    <div class = "header">
+        <h1> A collection of your loot... 
+            <button mat-raised-button (click) = "reInit();">Refresh</button>
+            <button mat-raised-button (click) = "clearData();">Clear Data</button>
+
+        </h1>
+        
+    </div>
+  
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
       
@@ -25,8 +33,11 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-      
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        
+        <mat-paginator [pageSizeOptions]="[20,30,40]" showFirstLastButtons> </mat-paginator>
       </div>
+
+     
+      
       
 </div>

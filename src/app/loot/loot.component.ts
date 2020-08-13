@@ -8,10 +8,9 @@ export interface lootElement {
   quantity: number;
 }
 
-
-
 let ELEMENT_DATA: lootElement[]; 
 ELEMENT_DATA = [];
+
 for(let i = 0; i < localStorage.length;i++){
     let key = localStorage.key(i);
     ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
@@ -23,6 +22,9 @@ for(let i = 0; i < localStorage.length;i++){
   styleUrls: ['./loot.component.css']
 })
 export class LootComponent implements OnInit {
+  
+  ELEMENT_DATA = [];
+
   displayedColumns: string[] = ['position', 'name', 'quantity'];
   dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
 
@@ -31,6 +33,29 @@ export class LootComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  //Called only when user switches tab to loot
+  reInit():void{
+    
+    ELEMENT_DATA = []; //re-set data because we're reading it all again
+    this.dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
+
+    for(let i = 0; i < localStorage.length;i++){
+      let key = localStorage.key(i);
+      ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
+    } 
+
+    this.dataSource.paginator = this.paginator;
+  }
+
+  clearData():void{
+    ELEMENT_DATA = []; //re-set data because we're reading it all again
+    localStorage.clear();
+    this.dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
+    this.dataSource.paginator = this.paginator;
+
+  }
+
 
 
 }
