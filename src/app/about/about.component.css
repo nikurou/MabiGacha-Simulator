@@ -16,3 +16,8 @@ a:hover {
 a:active{
     color: black;
 }
+
+.answer-container{
+    margin-left: 3%;
+    
+}
