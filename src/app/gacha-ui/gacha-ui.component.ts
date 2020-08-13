@@ -5,6 +5,7 @@ import { Gachapon } from './gacha-logic'
 import axios from 'axios';
 import { OptionsComponent } from './options/options.component';
 import { RatesComponent } from '../rates/rates.component'
+import { ConsoleComponent } from '../console/console.component';
 
 
 declare const gachaLogic: any;
@@ -65,8 +66,21 @@ export class GachaUIComponent {
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     axios.get(this.serverStringURL)
       .then(res => {
-        console.log(res.data) //Result of gaching
-        this.resultGach = this.resultGach.concat(res.data);
+        //console.log(res.data[0]) //Result of gaching
+        this.resultGach = this.resultGach.concat(res.data[0]);
+        if(localStorage.getItem("Total items") === null){
+
+        }else{
+
+        }
+        for(let i = 0; i < res.data[1].length;i++){
+            if(localStorage.getItem(res.data[1][i])===null){
+                localStorage.setItem(res.data[1][i], "1");
+            }else{
+                let quantity = parseInt(localStorage.getItem(res.data[1][i]),10) + 1;
+                localStorage.setItem(res.data[1][i], quantity.toString());
+            }
+        }
       });
   }
 
