@@ -17,10 +17,12 @@ export class GachaUIComponent {
 
   currentGachaObject: Gachapon;
   selectedGachapon: string; //Sent to options component
-  selectedImage: string;
+  selectedImage: string; 
   selectedList: string[]; //Sent to options component
   serverStringURL: string; //Receive from child component
-  disable: String; 
+  disable: String;  //Determines if the Gach button is disabled or not.
+
+  public resultGach: string[]; //Holds all the output from server...To be passed to Console
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
@@ -58,12 +60,11 @@ export class GachaUIComponent {
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
   gach() {    
     
-    //If 
-
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     axios.get(this.serverStringURL)
       .then(res => {
-        console.log(res.data)
+        console.log(res.data) //Result of gaching
+        this.resultGach = res.data;
       });
   }
 

@@ -30,7 +30,8 @@
           <app-options #options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)"></app-options>
         </mat-tab>
         <mat-tab label="Console">
-          <app-console></app-console>
+          <!---Pass the resultGach to Console Component-->
+          <app-console [resultGach] = "resultGach"></app-console>
         </mat-tab>
         <mat-tab label="Rates">
           <app-rates></app-rates>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-console',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./console.component.css']
 })
 export class ConsoleComponent implements OnInit {
+
+  @Input() resultGach: string[]; //Passed to us from gacha-ui
 
   constructor() { }
 
