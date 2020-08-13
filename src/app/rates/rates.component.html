@@ -1,54 +1,7 @@
 <div class= rates-container>
-    
-    <!--Hardcoded for now -->
-    <p> Rates  Item </p>
-    <p> 0.09%	Special Secret Garden Wings (Enchantable) </p>
-    <p>0.11%	Passionate Secret Garden Wings (Enchantable)</p>
-    <p>0.11%	Refined Secret Garden Wings (Enchantable)</p>
-    <p>0.11%	Refreshing Secret Garden Wings (Enchantable)</p>
-    <p>0.11%	Warm Secret Garden Wings (Enchantable)</p>
-    <p>0.11%	Pure Secret Garden Wings (Enchantable)</p>
-    <p>0.11%	Abyss Secret Garden Wings (Enchantable)</p>
-    <p>0.12%	Special Secret Garden Outfit (M)</p>
-    <p>0.12%	Special Secret Garden Dress (F)</p>
-    <p>0.21%	Secret Garden Outfit (M)</p>
-    <p>0.21%	Secret Garden Dress (F)</p>
-    <p>0.18%	Secret Garden Wig (M)</p>
-    <p>0.23%	Secret Garden Wig and Hairpiece (M)</p>
-    <p>0.18%	Secret Garden Wig (F)</p>
-    <p>0.23%	Secret Garden Wig and Hairpiece (F)</p>
-    <p>0.35%	Secret Garden Shoes (M)</p>
-    <p>0.35%	Secret Garden Shoes (F)</p>
-    <p>0.11%	Homestead Special Secret Garden Gate</p>
-    <p>0.11%	Homestead Special Secret Garden Hidden Spring</p>
-    <p>0.14%	Greenish Reindeer Horn Headband</p>
-    <p>0.14%	Luminous Catsidhe Headband</p>
-    <p>0.14%	Abyssal Catsidhe Headband</p>
-    <p>0.12%	Luminous Petal Tail</p>
-    <p>0.12%	Catsidhe Tail</p>
-    <p>0.12%	Arctic Fox Lantern Tail</p>
-    <p>0.14%	Eastern Dragon Cintamani Tail</p>
-    <p>0.14%	Starry Night Wolf Tail</p>
-    <p>0.14%	Feather Tail</p>
-    <p>0.14%	Fluffy Ribbon Kitty Tail</p>
-    <p>0.14%	Plushie Deer Tail</p>
-    <p>0.14%	Plushie Pom Tail</p>
-    <p>0.12%	Fluffy Five-tailed Fox Tail</p>
-    <p>0.14%	Plushie Alligator Tail</p>
-    <p>0.14%	Devil Tail</p>
-    <p>0.14%	Fluffy Squirrel Tail</p>
-    <p>0.12%	Cheerful Bride's Minidress</p>
-    <p>0.18%	Blissful Groom's Suit</p>
-    <p>0.23%	Cheerful Bride's Wig and Headband</p>
-    <p>0.23%	Cheerful Bride's Headband</p>
-    <p>0.23%	Blissful Groom's Wig</p>
-    <p>0.20%	Special Arctic Fox Headband</p>
-    <p>0.20%	Special Eastern Dragon Headband</p>
-    <p>0.20%	Special Starry Night Wolf Headband</p>
-    <p>0.20%	Special Feather Ear Headband</p>
-    <p>0.71%	Arctic Fox Headband</p>
-    <p>0.71%	Eastern Dragon Headband </p>
-    <p>0.80%	Starry Night Wolf Headband </p>
+    <p> Rates  Item  from {{selectedGachapon}} </p>
+    <p *ngFor = "let rateName of rateNameList"> {{rateName}}</p>
 
+   
 </div>
 
