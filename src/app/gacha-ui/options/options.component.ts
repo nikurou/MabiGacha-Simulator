@@ -11,6 +11,7 @@ export class OptionsComponent {
 
   @Input() selectedList: string[]; // Passed to us from gacha-UI
   @Input() selectedGachapon: string; //Passed to us from gacha-UI 
+  public disable: string; 
 
   public selectedItem: string;    // Name of selected item
   public quantity: number;        // Quantity gaching by (Meant for DISPLAY, NOT wiped when changing to "specific" gach)
@@ -22,6 +23,7 @@ export class OptionsComponent {
 
   //Required for sending to Parent Component (gacha-ui)
   @Output() messageEvent = new EventEmitter<string>();
+  
 
   //Function to send message, Link this function to gach() in gacha-ui.component.ts
   sendToParent() {
@@ -35,18 +37,22 @@ export class OptionsComponent {
     this.trueQuantity = 1;
     this.selectedOption = "bulk";
     this.errorMessage = "";
+    this.disable = "false"; //Disable button for gach is false by default
   }
 
   
   verifyItemExist(selectedItem){
     //If selected item isnt null AND it's not in the list
-    if(selectedItem!= null && this.selectedList.includes(selectedItem) == false){
+    if(this.selectedList.includes(selectedItem) == false){
       //Send error message
       this.errorMessage = "The item you inputted does not exist! Please try again...";
+      
       //Disable Gach Button
+      this.disable = "true";
     }
     else{
       this.errorMessage = "";
+      this.disable = "false";
     }
   }
   
@@ -74,6 +80,7 @@ export class OptionsComponent {
     if(option == 'bulk'){
       this.selectedOption = "bulk";
       this.errorMessage = ""; //Clear error message as bulk doesn't use item
+      this.disable = "false"; //Make sure button isnt disabled
     }
   }
 
@@ -90,11 +97,13 @@ export class OptionsComponent {
       this.selectedItem = null;
       this.trueQuantity = this.quantity; //Set trueQuantity to currently displayed value on the dropdown. 
       this.errorMessage = ""; //Clear error message bulk doesn't use items
+      this.disable = "false"; //Make sure button isnt disabled
     }
 
     // Clear quantity 
     if (option == "specific") {
       this.trueQuantity = null;
+      this.verifyItemExist(this.selectedItem);
     }
 
   }

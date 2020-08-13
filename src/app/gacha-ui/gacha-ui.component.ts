@@ -20,6 +20,7 @@ export class GachaUIComponent {
   selectedImage: string;
   selectedList: string[]; //Sent to options component
   serverStringURL: string; //Receive from child component
+  disable: String; 
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
@@ -36,6 +37,7 @@ export class GachaUIComponent {
     this.selectedGachapon = this.gachas[0].gachaName;
     this.selectedImage = this.gachas[0].gachaURL;
     this.selectedList = this.gachas[0].gachaList;
+    this.disable = "false";
   }
   
   //Receive StringURL built from current options and save it serverStringURL
