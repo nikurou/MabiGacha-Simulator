@@ -7,7 +7,7 @@
       <button mat-button [matMenuTriggerFor]="menu"> {{selectedGachapon}} <img
           src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha)">
+        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha); tabGroup.selectedIndex=0;">
           {{gacha.gachaName}}
         </button>
 
@@ -31,7 +31,7 @@
         </mat-tab>
         <mat-tab label="Console">
           <!---Pass the resultGach to Console Component-->
-          <app-console [resultGach] = "resultGach"></app-console>
+          <app-console #console [resultGach] = "resultGach"></app-console>
         </mat-tab>
         <mat-tab label="Rates">
           <app-rates></app-rates>
@@ -43,6 +43,6 @@
     <!--On Click, make it go to the Console Tab-->
     <!--When this button is clicked, it changes tab to Console Tab, Builds/Sends link to Parent, and calls gach()-->
     <!--Button is only disabled if the item user selected is not possible. Sent from Options.-->
-    <button mat-button disabled = "{{options.disable}}" (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach();" >GACH</button> 
+    <button mat-button disabled = "{{options.disable}}" (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach();  " >GACH</button> 
   </mat-card-actions>
 </mat-card>

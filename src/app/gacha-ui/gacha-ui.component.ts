@@ -26,7 +26,6 @@ export class GachaUIComponent {
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
-  @ViewChild('child') child:OptionsComponent;
 
   gachas = [
     new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png'),
@@ -40,6 +39,7 @@ export class GachaUIComponent {
     this.selectedImage = this.gachas[0].gachaURL;
     this.selectedList = this.gachas[0].gachaList;
     this.disable = "false";
+    this.resultGach = [];
   }
   
   //Receive StringURL built from current options and save it serverStringURL
@@ -54,6 +54,7 @@ export class GachaUIComponent {
     this.selectedGachapon = gacha.gachaName;
     this.selectedImage = gacha.gachaURL;
     this.selectedList = gacha.gachaList;
+
   }
 
 
@@ -64,7 +65,9 @@ export class GachaUIComponent {
     axios.get(this.serverStringURL)
       .then(res => {
         console.log(res.data) //Result of gaching
-        this.resultGach = res.data;
+        //this.resultGach = res.data;
+        this.resultGach = this.resultGach.concat(res.data);
+
       });
   }
 
