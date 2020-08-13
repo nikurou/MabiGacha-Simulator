@@ -21,6 +21,15 @@ export class RatesComponent implements OnInit {
       });
   }
 
+  //Called only when gachapon changes to re-initialize the array to the new one.
+  reInit(gachapon):void {
+    axios.get("http://localhost:5000/gacha/" + gachapon)
+      .then(res => {
+        console.log(res.data) //"rate" "name"
+        this.rateNameList = this.combineToProperFormat(res.data);
+      });
+  }
+
   //Combine tha array from "rate","name" format to "rate name" format
   combineToProperFormat(resdata){
     let rateNameList = [];
