@@ -13,7 +13,7 @@ ELEMENT_DATA = [];
 
 for(let i = 0; i < localStorage.length;i++){
     let key = localStorage.key(i);
-    if(key !== "Total Gacha"){
+    if(key !== "Total Gacha" && key !== "Total NX"){
       ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
     }
   } 
@@ -44,7 +44,7 @@ export class LootComponent implements OnInit {
 
     for(let i = 0; i < localStorage.length;i++){
       let key = localStorage.key(i);
-      if(key !== "Total Gacha"){
+      if(key !== "Total Gacha" && key !== "Total NX"){
         ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
       }
     } 

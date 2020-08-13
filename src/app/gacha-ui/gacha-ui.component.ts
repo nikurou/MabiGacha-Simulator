@@ -24,6 +24,7 @@ export class GachaUIComponent {
   serverStringURL: string; //Receive from child component
   disable: String;  //Determines if the Gach button is disabled or not.
   totalGacha: string;
+  totalNX: string;
   public resultGach: string[]; //Holds all the output from server...To be passed to Console
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
@@ -47,6 +48,10 @@ export class GachaUIComponent {
         localStorage.setItem("Total Gacha", "0"); 
     }
     this.totalGacha = localStorage.getItem("Total Gacha");
+    if(localStorage.getItem("Total NX") === null){
+        localStorage.setItem("Total NX", "0"); 
+    }
+    this.totalNX = localStorage.getItem("Total NX");
   }
   
   //Receive StringURL built from current options and save it serverStringURL
@@ -73,8 +78,15 @@ export class GachaUIComponent {
       .then(res => {
         //console.log(res.data[0]) //Result of gaching
         this.resultGach = this.resultGach.concat(res.data[0]);
-        this.totalGacha = (parseInt(this.totalGacha,10) + res.data[1].length).toString(); 
+        let numItems = res.data[1].length;
+        this.totalGacha = (parseInt(this.totalGacha, 10) + numItems).toString(); 
         localStorage.setItem("Total Gacha", this.totalGacha);
+        //(NumItems/45) * 57500 + ((NumItems%45)/11)*15,000 + ((numItems%45)%11) * 1,500;
+        let fortyfive = (numItems - numItems%45)/45 * 57500;
+        let eleven = (numItems%45 - (numItems%45)%11)/11 * 15000;
+        let one = (numItems%45)%11 * 1500;
+        this.totalNX = (parseInt(this.totalNX, 10) + (fortyfive + eleven + one)).toString();
+        localStorage.setItem("Total NX", this.totalNX);
         for(let i = 0; i < res.data[1].length;i++){
             if(localStorage.getItem(res.data[1][i])===null){
                 localStorage.setItem(res.data[1][i], "1");
