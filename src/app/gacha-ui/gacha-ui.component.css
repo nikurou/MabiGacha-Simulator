@@ -24,6 +24,10 @@
     color: rgb(165, 165, 165);
 }
 
+.mat-card-subtitle b{
+    color: rgb(220, 220, 220);
+}
+
 .mat-card-image {
     background-size: cover;
     height: 200px;

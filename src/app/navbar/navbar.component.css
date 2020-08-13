@@ -15,9 +15,10 @@
 }
 
 /*---- Horizontal Bar on bar -----*/
-.ng-tns-c37-0 hr{
-  border-color: grey;
-  border-top: 1px solid grey;
+
+hr {
+  border-color: rgba(128, 128, 128, 0.596);
+  border-top: 1px transparent grey;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -46,9 +47,22 @@
   
 }
 
+span {
+
+}
+
 span img{
   height: 24px;
   width: 24px;
+  
+}
+
+.sidebar-footer{
+  color: rgba(201, 196, 196, 0.753);
+  position: absolute; 
+  bottom: 2%; 
+  margin-left: 10%;
+  font-size: 0.8em;  
 }
 
 /*-------Horizontal GachaNX Counter-----*/
@@ -70,6 +84,12 @@ span img{
 }
 
 /*-------Item's in the Menu ----------*/
+
+.mat-body p, .mat-body-1 p, .mat-typography p{
+  color: rgba(255, 255, 255, 0.87) !important;
+  text-shadow: 3px 3px black;
+}
+
 .mat-list-base .mat-list-item img {
   height: 48px;
   width: 48px;

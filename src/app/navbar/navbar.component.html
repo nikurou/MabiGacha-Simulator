@@ -11,18 +11,28 @@
     </div>
 
    -->
-   <hr> 
+   <hr>
 
     <mat-nav-list >
       <a mat-list-item href="#" (click)="assignComponent('loot')"> <img src="https://img.icons8.com/color/48/000000/rucksack.png"/>  Your Loot</a>
       <a mat-list-item href="#" (click)="assignComponent('gacha')"> <img src="https://img.icons8.com/bubbles/50/000000/gift.png"/>  Gach! </a>
+      <a mat-list-item href="#" (click)="assignComponent('about')"> <img src="https://img.icons8.com/bubbles/50/000000/about.png"/> About</a>
+      
       <a mat-list-item href="https://wiki.mabinogiworld.com/view/Wiki_Home" target="_blank"> <img src = "https://wiki.mabinogiworld.com/skins/common/images/mw/mwiki.png?83e97"/>  Wiki</a>
       <a mat-list-item href="#" > <img src="https://img.icons8.com/clouds/100/000000/discord-logo.png"/> Discord</a>
-      <a mat-list-item href="#" (click)="assignComponent('about')"> <img src="https://img.icons8.com/bubbles/50/000000/about.png"/> About</a>
-      <a mat-list-item href="https://github.com/nikurou/MabiGacha-Simulator" target="_blank"> <img src="https://img.icons8.com/clouds/100/000000/github.png"/> GitHub</a>
-      
+      <a mat-list-item href="https://github.com/nikurou/MabiGacha-Simulator" target="_blank"> <img src="https://img.icons8.com/clouds/100/000000/github.png"/> GitHub</a>  
     </mat-nav-list>
+    
+    <hr style = "position: absolute; bottom: 4%; width: 82%;">
+    
+    <div class = "sidebar-footer">
+      
+    </div>
+  
   </mat-sidenav>
+  
+
+
   <mat-sidenav-content>
     <mat-toolbar>
       <button
@@ -33,7 +43,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span> Mabinogi Gachapon</span>
+      <span> MabiGacha </span>
     </mat-toolbar>
     
       <ng-content *ngComponentOutlet ="dummyComponent"></ng-content> <!--To use angular content projection-->
