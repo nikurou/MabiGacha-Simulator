@@ -4,6 +4,7 @@ import { Gachapon } from './gacha-logic'
 
 import axios from 'axios';
 import { OptionsComponent } from './options/options.component';
+import { RatesComponent } from '../rates/rates.component'
 
 
 declare const gachaLogic: any;
