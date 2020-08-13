@@ -30,10 +30,19 @@ export class LootComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'quantity'];
   dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
 
+  suchEmpty: string; 
+
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+
+    if(ELEMENT_DATA.length == 0){
+      this.suchEmpty = "wow such empty";
+    }
+    else{
+      this.suchEmpty = "";
+    }
   }
 
   //Called only when user switches tab to loot
@@ -49,6 +58,13 @@ export class LootComponent implements OnInit {
       }
     } 
 
+    if(ELEMENT_DATA.length == 0){
+      this.suchEmpty = "wow such empty";
+    }
+    else{
+      this.suchEmpty = "";
+    }
+
     this.dataSource.paginator = this.paginator;
   }
 
@@ -57,6 +73,7 @@ export class LootComponent implements OnInit {
     localStorage.clear();
     this.dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
     this.dataSource.paginator = this.paginator;
+    this.suchEmpty = "deleted!"
 
   }
 

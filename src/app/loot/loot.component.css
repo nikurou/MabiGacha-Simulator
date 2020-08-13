@@ -8,15 +8,18 @@
     margin: auto;
     margin: 82px auto 32px;
     align-items: center;
+   
 }
 
 .header h1{
-   margin-left: 8%;
+   margin-left: 8.5%;
+   margin-right: 8.5%;
+  
 }
 
 .header button{
-    margin: 1%;
-    left: 53%;
+    
+    float:right;
 }
 .mat-elevation-z8{
     width: 85%;
@@ -27,4 +30,7 @@
 table {
     width: 100%;
 }
-  
+
+small {
+    font-size: 50%;
+}
