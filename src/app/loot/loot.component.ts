@@ -10,14 +10,14 @@ export interface lootElement {
 
 const ELEMENT_DATA: lootElement[] = [
   {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
-  {position: 1, name: 'Special Forest Pengu', quantity: 1},
+  {position: 2, name: 'Special Forest Pengu', quantity: 1},
+  {position: 3, name: 'Special Forest Pengu', quantity: 1},
+  {position: 4, name: 'Special Forest Pengu', quantity: 1},
+  {position: 5, name: 'Special Forest Pengu', quantity: 1},
+  {position: 6, name: 'Special Forest Pengu', quantity: 1},
+  {position: 7, name: 'Special Forest Pengu', quantity: 1},
+  {position: 8, name: 'Special Forest Pengu', quantity: 1},
+  {position: 9, name: 'Special Forest Pengu', quantity: 1},
 ];
 
 @Component({
