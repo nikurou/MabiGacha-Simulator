@@ -13,8 +13,10 @@ ELEMENT_DATA = [];
 
 for(let i = 0; i < localStorage.length;i++){
     let key = localStorage.key(i);
-    ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
-} 
+    if(key !== "Total Gacha"){
+      ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
+    }
+  } 
 
 @Component({
   selector: 'app-loot',
@@ -42,7 +44,9 @@ export class LootComponent implements OnInit {
 
     for(let i = 0; i < localStorage.length;i++){
       let key = localStorage.key(i);
-      ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
+      if(key !== "Total Gacha"){
+        ELEMENT_DATA.push({position: i+1, name: key, quantity: parseInt(localStorage.getItem(key), 10)});
+      }
     } 
 
     this.dataSource.paginator = this.paginator;

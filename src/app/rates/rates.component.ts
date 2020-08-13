@@ -25,7 +25,7 @@ export class RatesComponent implements OnInit {
   reInit(gachapon):void {
     axios.get("http://localhost:5000/gacha/" + gachapon)
       .then(res => {
-        console.log(res.data) //"rate" "name"
+        //console.log(res.data) //"rate" "name"
         this.rateNameList = this.combineToProperFormat(res.data);
       });
   }

@@ -23,7 +23,7 @@ export class GachaUIComponent {
   selectedList: string[]; //Sent to options component
   serverStringURL: string; //Receive from child component
   disable: String;  //Determines if the Gach button is disabled or not.
-
+  totalGacha: string;
   public resultGach: string[]; //Holds all the output from server...To be passed to Console
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
@@ -42,6 +42,10 @@ export class GachaUIComponent {
     this.selectedList = this.gachas[0].gachaList;
     this.disable = "false";
     this.resultGach = [];
+    if(localStorage.getItem("Total Gacha") === null){
+        localStorage.setItem("Total Gacha", "0"); 
+    }
+    this.totalGacha = localStorage.getItem("Total Gacha");
   }
   
   //Receive StringURL built from current options and save it serverStringURL
@@ -68,11 +72,8 @@ export class GachaUIComponent {
       .then(res => {
         //console.log(res.data[0]) //Result of gaching
         this.resultGach = this.resultGach.concat(res.data[0]);
-        if(localStorage.getItem("Total items") === null){
-
-        }else{
-
-        }
+        this.totalGacha = (parseInt(this.totalGacha,10) + res.data[1].length).toString(); 
+        localStorage.setItem("Total Gacha", this.totalGacha);
         for(let i = 0; i < res.data[1].length;i++){
             if(localStorage.getItem(res.data[1][i])===null){
                 localStorage.setItem(res.data[1][i], "1");
