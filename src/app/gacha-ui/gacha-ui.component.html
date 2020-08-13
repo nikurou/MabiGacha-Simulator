@@ -7,7 +7,7 @@
       <button mat-button [matMenuTriggerFor]="menu"> {{selectedGachapon}} <img
           src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha); tabGroup.selectedIndex=0;">
+        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha); tabGroup.selectedIndex=0; rates.reInit(selectedGachapon);">
           {{gacha.gachaName}}
         </button>
 
@@ -34,7 +34,7 @@
           <app-console #console [resultGach] = "resultGach"></app-console>
         </mat-tab>
         <mat-tab label="Rates">
-          <app-rates [selectedGachapon] = "selectedGachapon"></app-rates>
+          <app-rates #rates [selectedGachapon] = "selectedGachapon"></app-rates>
         </mat-tab>
       </mat-tab-group>
 
