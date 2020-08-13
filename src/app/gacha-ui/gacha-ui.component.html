@@ -34,7 +34,7 @@
           <app-console #console [resultGach] = "resultGach"></app-console>
         </mat-tab>
         <mat-tab label="Rates">
-          <app-rates></app-rates>
+          <app-rates [selectedGachapon] = "selectedGachapon"></app-rates>
         </mat-tab>
       </mat-tab-group>
 
@@ -43,6 +43,6 @@
     <!--On Click, make it go to the Console Tab-->
     <!--When this button is clicked, it changes tab to Console Tab, Builds/Sends link to Parent, and calls gach()-->
     <!--Button is only disabled if the item user selected is not possible. Sent from Options.-->
-    <button mat-button disabled = "{{options.disable}}" (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach();  " >GACH</button> 
+    <button mat-button disabled = "{{options.disable}}" (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach();" >GACH</button> 
   </mat-card-actions>
 </mat-card>

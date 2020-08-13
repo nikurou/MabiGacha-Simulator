@@ -65,9 +65,7 @@ export class GachaUIComponent {
     axios.get(this.serverStringURL)
       .then(res => {
         console.log(res.data) //Result of gaching
-        //this.resultGach = res.data;
         this.resultGach = this.resultGach.concat(res.data);
-
       });
   }
 
