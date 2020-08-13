@@ -107,4 +107,12 @@ export class OptionsComponent {
     }
 
   }
+
+  //When changing gachapon, clear the search bar.
+  clearTheSearch(){
+    this.selectedItem = null;
+    this.radioChange(this.selectedOption); //Call this to disable input if they're still on specific gach.
+    
+
+  }
 }
