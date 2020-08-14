@@ -42,11 +42,13 @@ export class ConsoleComponent implements OnInit {
     let interval = this.timeInterval
     let thisUpdater = setInterval(() => {
       stopIndex = this.currResultGach.length; 
-      this.resultGach.push(this.currResultGach[i]);
+      let resultToPush = this.currResultGach[i];
+      this.resultGach.push(resultToPush);
       i = i+ 1;
       
       if(i == stopIndex){
         clearInterval(thisUpdater); //Stops the continual updating on intervals when this is called
+        resultToPush = ""; //If it's pushing empty string, it's not actually updating so scroll doesn't get called.
       }
     }, interval); //If slowmode slider is toggled, the time interval shortens
   }
