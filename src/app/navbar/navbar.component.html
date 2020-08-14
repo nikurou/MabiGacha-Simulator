@@ -3,8 +3,11 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar><img src= "https://i.pinimg.com/originals/7f/56/2b/7f562baf600b94d02829d3b401d944ef.png"/></mat-toolbar>
-
+   
+    <div id = "logo">
+      <img src= "../assets/img/pengulogow.png"/>
+    </div>
+    
     <!--horizontal Gacha Counter | NX Counter 
     <div class ="horizontalCounters">
       <img src="https://img.icons8.com/fluent/48/000000/gift--v2.png"/> <h1>Test</h1> <small>Gachapon</small>
@@ -31,8 +34,7 @@
   
   </mat-sidenav>
   
-
-
+  <!--Toolbar Contents-->
   <mat-sidenav-content>
     <mat-toolbar>
       <button
@@ -44,6 +46,10 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span> MabiGacha </span>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
     </mat-toolbar>
     
       <ng-content *ngComponentOutlet ="dummyComponent"></ng-content> <!--To use angular content projection-->
