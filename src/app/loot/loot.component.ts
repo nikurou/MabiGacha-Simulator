@@ -68,7 +68,7 @@ export class LootComponent implements OnInit {
       this.topMessage = "you're an addict!";
     }
     else{
-      this.topMessage = "";
+      this.topMessage = "pengus are superior to buns";
     }
 
     this.dataSource.paginator = this.paginator;
