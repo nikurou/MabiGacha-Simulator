@@ -26,6 +26,7 @@ export class GachaUIComponent {
   totalGacha: string;
   totalNX: string;
   public resultGach: string[]; //Holds all the output from server...To be passed to Console
+  public currResultGach: string[]; //Holds the output from just the current gach 
 
   // NOTE TO SELF: ENSURE that user typed entry is an item that exists in the list..
 
@@ -44,6 +45,7 @@ export class GachaUIComponent {
     this.selectedList = this.gachas[0].gachaList;
     this.disable = "false";
     this.resultGach = [];
+    this.currResultGach = [];
     if(localStorage.getItem("Total Gacha") === null){
         localStorage.setItem("Total Gacha", "0"); 
     }
@@ -77,6 +79,7 @@ export class GachaUIComponent {
     axios.get(this.serverStringURL)
       .then(res => {
         //console.log(res.data[0]) //Result of gaching
+        this.currResultGach  = res.data[0];
         this.resultGach = this.resultGach.concat(res.data[0]);
         let numItems = res.data[1].length;
         this.totalGacha = (parseInt(this.totalGacha, 10) + numItems).toString(); 
