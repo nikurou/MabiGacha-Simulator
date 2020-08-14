@@ -5,6 +5,7 @@
     overflow: auto;
     resize: vertical;
     overflow-x: hidden !important; /* Hide horizontal scrollbar */
+    overflow-y: scroll;
     background-color:black;
     color:white;
     font-family:'Courier New', Courier, monospace;
@@ -16,8 +17,10 @@
 @media screen and (max-width: 813px){
     
     .console {
-        width:100%;
+        width:98%;
     }
 
 
 }
+
+

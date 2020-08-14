@@ -1,6 +1,8 @@
-<div class = console>
+<div class = "console" #scrollframe >
+  
     <h1>Console Log</h1>
 
-    <p *ngFor = "let result of resultGach"> {{result}}</p>
-
+    <div *ngFor = "let result of resultGach" class = "item" #item> 
+      <p>{{result}}</p>
+    </div>
   </div>
