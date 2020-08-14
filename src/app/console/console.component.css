@@ -2,6 +2,7 @@
     min-height: 300px;
     height: 300px;
     width:98%;
+    max-width: 98%;
     overflow: auto;
     resize: vertical;
     overflow-x: hidden !important; /* Hide horizontal scrollbar */
@@ -11,8 +12,33 @@
     font-family:'Courier New', Courier, monospace;
     padding:10px;
     font-size: 1em;
+}
+
+.header{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color:transparent;
+  color:white;
+  display: inline-block;
+
+}
+
+::ng-deep .mat-slide-toggle-bar {
+    background-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: green;
+}
+
+.mat-slide-toggle{
+    float:right;
+    font-size: 0.5em;
     
 }
+
 
 @media screen and (max-width: 813px){
     
