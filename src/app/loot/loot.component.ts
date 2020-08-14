@@ -30,7 +30,7 @@ export class LootComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'quantity'];
   dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
 
-  suchEmpty: string; 
+  topMessage: string; 
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -38,10 +38,10 @@ export class LootComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
 
     if(ELEMENT_DATA.length == 0){
-      this.suchEmpty = "wow such empty";
+      this.topMessage = "wow such empty";
     }
     else{
-      this.suchEmpty = "";
+      this.reInit();
     }
   }
 
@@ -59,10 +59,16 @@ export class LootComponent implements OnInit {
     } 
 
     if(ELEMENT_DATA.length == 0){
-      this.suchEmpty = "wow such empty";
+      this.topMessage = "you refreshed...but it's still empty";
+    }
+    else if(ELEMENT_DATA.length >= 100 && ELEMENT_DATA.length < 200){
+      this.topMessage = "bruh, that's a lot of loot";
+    }
+    else if(ELEMENT_DATA.length >= 200 && ELEMENT_DATA.length < 300){
+      this.topMessage = "you're an addict!";
     }
     else{
-      this.suchEmpty = "";
+      this.topMessage = "";
     }
 
     this.dataSource.paginator = this.paginator;
@@ -73,7 +79,7 @@ export class LootComponent implements OnInit {
     localStorage.clear();
     this.dataSource = new MatTableDataSource<lootElement>(ELEMENT_DATA);
     this.dataSource.paginator = this.paginator;
-    this.suchEmpty = "deleted!"
+    this.topMessage = "deleted!"
 
   }
 
