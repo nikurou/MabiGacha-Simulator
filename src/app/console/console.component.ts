@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, ViewChildren, QueryList, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-console',
@@ -7,8 +7,10 @@ import { Component, OnInit, Input, ViewChild, ElementRef, ViewChildren, QueryLis
 })
 export class ConsoleComponent implements OnInit {
 
-  @ViewChild('scrollframe', {static: false}) scrollFrame: ElementRef;
+  @ViewChild('scrollframe', { static: false }) scrollFrame: ElementRef;
   @ViewChildren('item') itemElements: QueryList<any>;
+
+  @Output() slowModeStatus = new EventEmitter<boolean>();
 
   private scrollContainer: any;
   private slowEnabled: boolean;
@@ -24,50 +26,53 @@ export class ConsoleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   ngAfterViewInit() {
-    this.scrollContainer = this.scrollFrame.nativeElement;  
-    this.itemElements.changes.subscribe(_ => this.onItemElementsChanged());  
-
+    this.scrollContainer = this.scrollFrame.nativeElement;
+    this.itemElements.changes.subscribe(_ => this.onItemElementsChanged());
   }
-  
-  
+
+  sendSlowModeStatus(){
+    this.slowModeStatus.emit(this.slowEnabled);
+  }
+
   // Push the results to the array that is displayed on screen either slow or fast
   // Depends on what user toggled.
-  public gachPushResults(){
+  public gachPushResults() {
     let i = 0;
     let stopIndex: number;
     let interval = this.timeInterval
 
-    if(this.slowEnabled == false){
+    if (this.slowEnabled == false) {
       //Hacky workaround to give currResultGach time to be passed from gacha-UI. without this, 
       // it gives the list from the last gach batch. 
-      setTimeout(() => { this.resultGach  = this.resultGach.concat(this.currResultGach); }, 100);
-      
+      setTimeout(() => { this.resultGach = this.resultGach.concat(this.currResultGach); }, 100);
     }
-    else if(this.slowEnabled == true){
+    else if (this.slowEnabled == true) {
+
+
       let thisUpdater = setInterval(() => {
-          stopIndex = this.currResultGach.length; 
-          let resultToPush = this.currResultGach[i];
-          this.resultGach.push(resultToPush);
-          i = i+ 1;
-          
-          if(i == stopIndex){
-            clearInterval(thisUpdater); //Stops the continual updating on intervals when this is called
-            resultToPush = ""; //If it's pushing empty string, it's not actually updating so scroll doesn't get called.
-          }
-        }, interval); //If slowmode slider is toggled, the time interval shortens
+        stopIndex = this.currResultGach.length;
+        let resultToPush = this.currResultGach[i];
+        this.resultGach.push(resultToPush);
+        i = i + 1;
+
+        if (i == stopIndex) {
+          clearInterval(thisUpdater); //Stops the continual updating on intervals when this is called
+          resultToPush = ""; //If it's pushing empty string, it's not actually updating so scroll doesn't get called.
+        }
+      }, interval); //If slowmode slider is toggled, the time interval shortens
     }
-    
+
   }
 
   private onItemElementsChanged(): void {
     this.scrollToBottom();
   }
 
- private scrollToBottom(): void {
+  private scrollToBottom(): void {
     this.scrollContainer.scroll({
       top: this.scrollContainer.scrollHeight,
       left: 0,
@@ -76,12 +81,12 @@ export class ConsoleComponent implements OnInit {
   }
 
   //Slow down the rate at which items are shown
-  public toggleSlowMode(){
+  public toggleSlowMode() {
     this.slowEnabled = !this.slowEnabled;
-    if(this.slowEnabled == true){
+    if (this.slowEnabled == true) {
       this.timeInterval = 500; //500ms
-    }else{
-      this.timeInterval = 0; //instant almost 
+    } else {
+      this.timeInterval = 0; //instant
     }
   }
 
