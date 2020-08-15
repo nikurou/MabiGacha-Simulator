@@ -34,6 +34,7 @@ function gachaLogic(files){
                                     }else{
                                         itemToAdd = temp[i+1];
                                     }
+                                    console.log(`${itemToAdd}: ${itemToAdd.length}`);
                                     generalList.push(itemToAdd);
                                     specificList.push(itemToAdd);
                                     for(let j = 0; j < numItem;j++){
