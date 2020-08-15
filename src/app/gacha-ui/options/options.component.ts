@@ -11,7 +11,7 @@ export class OptionsComponent {
 
   @Input() selectedList: string[]; // Passed to us from gacha-UI
   @Input() selectedGachapon: string; //Passed to us from gacha-UI 
-  public disable: string; 
+  public optionsDisable: string;  //Pass to parent gacha-UI
 
   public selectedItem: string;    // Name of selected item
   public quantity: number;        // Quantity gaching by (Meant for DISPLAY, NOT wiped when changing to "specific" gach)
@@ -23,6 +23,7 @@ export class OptionsComponent {
 
   //Required for sending to Parent Component (gacha-ui)
   @Output() messageEvent = new EventEmitter<string>();
+  @Output() disableEvent = new EventEmitter<string>();
   
 
   //Function to send message, Link this function to gach() in gacha-ui.component.ts
@@ -31,13 +32,18 @@ export class OptionsComponent {
     this.messageEvent.emit(this.serverStringURL);
   }
 
+  //Sends the status of disable to parent gacha-ui.component.ts
+  sendDisabilityToParent(){
+    this.disableEvent.emit(this.optionsDisable);
+  }
+
   // By default, user gaches in bulk of 1 and Option "bulk" is preselected for user.
   constructor() {
     this.quantity = 1;
     this.trueQuantity = 1;
     this.selectedOption = "bulk";
     this.errorMessage = "";
-    this.disable = "false"; //Disable button for gach is false by default
+    this.optionsDisable = "false"; //Disable button for gach is false by default
   }
 
   
@@ -48,11 +54,11 @@ export class OptionsComponent {
       this.errorMessage = "The item you inputted does not exist! Please try again...";
       
       //Disable Gach Button
-      this.disable = "true";
+      this.optionsDisable = "true";
     }
     else{
       this.errorMessage = "";
-      this.disable = "false";
+      this.optionsDisable = "false";
     }
   }
   
@@ -80,7 +86,7 @@ export class OptionsComponent {
     if(option == 'bulk'){
       this.selectedOption = "bulk";
       this.errorMessage = ""; //Clear error message as bulk doesn't use item
-      this.disable = "false"; //Make sure button isnt disabled
+      this.optionsDisable = "false"; //Make sure button isnt disabled
     }
   }
 
@@ -97,7 +103,7 @@ export class OptionsComponent {
       this.selectedItem = null;
       this.trueQuantity = this.quantity; //Set trueQuantity to currently displayed value on the dropdown. 
       this.errorMessage = ""; //Clear error message bulk doesn't use items
-      this.disable = "false"; //Make sure button isnt disabled
+      this.optionsDisable = "false"; //Make sure button isnt disabled
     }
 
     // Clear quantity 
@@ -112,7 +118,7 @@ export class OptionsComponent {
   clearTheSearch(){
     this.selectedItem = null;
     this.radioChange(this.selectedOption); //Call this to disable input if they're still on specific gach.
-    
-
   }
+
+
 }
