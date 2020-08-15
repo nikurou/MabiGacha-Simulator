@@ -28,22 +28,23 @@ body, html {
 }
 
 .left-half {  
-    width: 80%;
-    margin: auto;
+  margin-top: 15%;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 85%;
+  align-items: center;
+  width: 80%;
+ 
 }
 
 /*--MOBILE VIEW---*/
 @media screen and (max-width: 900px){
   .left-half {  
-    width: 100%;
+    width: 90%;
+    max-width: 90%;
     margin:auto;
-  }
-
-  .tab-content{
-    max-width: 95%;
-    width: 95%;
-    margin: auto;
-    margin-top: 32px;
+    margin-top: 10%;
+    
   }
 }
 /*--MOBILE VIEW---*/

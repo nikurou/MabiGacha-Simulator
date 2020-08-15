@@ -3,6 +3,7 @@
     box-shadow: 5px 5px 10px #888888;
     border-radius: 15px;
     overflow: vertical;
+    
     margin: auto;
 }
 
@@ -62,6 +63,8 @@
  
 /*--MOBILE VIEW---*/
 @media screen and (max-width: 900px){
+
+  
 
     .mat-card-subtitle{
         font-size: 0.8em;
