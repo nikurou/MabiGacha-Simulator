@@ -66,10 +66,10 @@ export class OptionsComponent {
   linkBuilder() {
     // http://localhost:5000/gacha/bulk/Forest Ranger Bag Gachapon/5
     if (this.selectedOption == 'bulk') {
-      this.serverStringURL = "http://localhost:80/gacha/" + this.selectedOption + "/" + this.selectedGachapon + "/" + this.trueQuantity;
+      this.serverStringURL = "https://mabinogi-gacha.herokuapp.com/gacha/" + this.selectedOption + "/" + this.selectedGachapon + "/" + this.trueQuantity;
     }
     if (this.selectedOption == 'specific') {
-      this.serverStringURL = "http://localhost:80/gacha/" + "single" + "/" + this.selectedGachapon + "/" + this.selectedItem;
+      this.serverStringURL = "https://mabinogi-gacha.herokuapp.com/gacha/" + "single" + "/" + this.selectedGachapon + "/" + this.selectedItem;
     }
     
   }
