@@ -11,3 +11,12 @@
     font-size: 1em;
     resize: vertical;
 }
+
+
+@media screen and (max-width: 823px){
+    
+    .rates-container {
+        width:98%;
+        font-size: 0.8em;
+    }
+}

@@ -38,6 +38,14 @@ body, html {
     width: 100%;
     margin:auto;
   }
+
+  .tab-content{
+    max-width: 95%;
+    width: 95%;
+    margin: auto;
+    margin-top: 32px;
+    
+  }
 }
 /*--MOBILE VIEW---*/
 
@@ -95,4 +103,5 @@ body, html {
  
 }
 /* ------------------Gachapon/Rates NAVBAR END----------------*/
+
 

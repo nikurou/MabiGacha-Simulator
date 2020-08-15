@@ -40,10 +40,20 @@
 }
 
 
-@media screen and (max-width: 813px){
+@media screen and (max-width: 823px){
     
     .console {
         width:98%;
+        font-size: 0.8em;
+    }
+
+    .console h1{
+        font-size: 1.7em;
+    }
+
+    ::ng-deep .mat-slide-toggle-label {
+        font-size: 0.8em;
+        float: right;
     }
 
 

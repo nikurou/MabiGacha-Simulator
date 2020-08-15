@@ -57,3 +57,13 @@
     background-color: gray;
     display: inline-block;
  }
+
+
+ 
+/*--MOBILE VIEW---*/
+@media screen and (max-width: 900px){
+
+    .mat-card-subtitle{
+        font-size: 0.8em;
+    }
+}
