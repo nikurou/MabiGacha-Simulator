@@ -18,7 +18,8 @@ function gachaLogic(files){
                     new Promise(function (resolve, reject) {
                         fs.readFile(files[i], (err, data) => { 
                             if (err) {
-                                () => reject(new Error(`Failed to read ${files[i]}`));
+                                console.error(err);
+                                reject(new Error(`Failed to read ${files[i]}`));
                             }else{ 
                                 temp = data.toString().split(/%\t|\n/); 
                                 let gachPool = [];
@@ -42,11 +43,15 @@ function gachaLogic(files){
                                 resolve(pools.push(gachPool));
                             }
                         });
+                    }).catch((error)=>{
+                        console.error(error);
                     })
                 );
             }
             Promise.all(promises).then(()=>{
                 resolve();
+            }).catch((error)=>{
+                console.error(error);
             });
         });
 
@@ -70,7 +75,6 @@ function gachaLogic(files){
                     
                 }
             }
-            //console.log(specificPool);
             while(!(selectedGacha === itemName)){
                 let random = Math.floor(Math.random() * pools[specificPool].length);
                 foundGacha = pools[specificPool][random].substring(0, pools[specificPool][random].length);
@@ -84,7 +88,6 @@ function gachaLogic(files){
                         foundGacha += subGacha;
                     }
                 }
-                //console.log(foundGacha);
                 response.push((counter) + ". Obtained [" + foundGacha + "]");
                 items.push(foundGacha);
             }
@@ -129,7 +132,6 @@ function gachaLogic(files){
         totalNX += NX;
         totalUSD += NX/1000;
         let total = [response, items];
-        //console.log(total);
         return total;
     }
 
@@ -142,20 +144,20 @@ promiseSwitch = function(gachaName){
     return new Promise(function (resolve, reject) {
         switch(gachaName){
             case "Forest Ranger Bag Gachapon": 
-                resolve(new gachaLogic(["textfiles/Forest_Ranger_Bag_Gachapon.txt"]));
+                resolve(new gachaLogic(["./backend/textfiles/Forest_Ranger_Bag_Gachapon.txt"]));
                 break;
             case "Secret Garden Box": 
-                resolve(new gachaLogic(["textfiles/Secret_Garden_Box_Gachapon.txt"]));
+                resolve(new gachaLogic(["./backend/textfiles/Secret_Garden_Box_Gachapon.txt"]));
                 break;
             case "Crow Feather Box": 
-                resolve(new gachaLogic(["textfiles/Crow_Feather_Box_Gachapon.txt"]));
+                resolve(new gachaLogic(["./backend/textfiles/Crow_Feather_Box_Gachapon.txt"]));
                 break;
             case "Erinn Beauty Box": 
                 resolve( 
                     new gachaLogic([
-                        "textfiles/Erinn_Beauty_Box_Hair.txt",
-                        "textfiles/Erinn_Beauty_Box_EFM.txt",
-                        "textfiles/Erinn_Beauty_Box_Voucher.txt"
+                        "./backend/textfiles/Erinn_Beauty_Box_Hair.txt",
+                        "./backend/textfiles/Erinn_Beauty_Box_EFM.txt",
+                        "./backend/textfiles/Erinn_Beauty_Box_Voucher.txt"
                     ])
                 );
                 break;
