@@ -14,7 +14,7 @@ export class RatesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    axios.get("http://localhost:5000/gacha/" + this.selectedGachapon)
+    axios.get("http://localhost:80/gacha/" + this.selectedGachapon)
       .then(res => {
         console.log(res.data) //"rate" "name"
         this.rateNameList = this.combineToProperFormat(res.data);
@@ -23,7 +23,7 @@ export class RatesComponent implements OnInit {
 
   //Called only when gachapon changes to re-initialize the array to the new one.
   reInit(gachapon):void {
-    axios.get("http://localhost:5000/gacha/" + gachapon)
+    axios.get("http://localhost:80/gacha/" + gachapon)
       .then(res => {
         //console.log(res.data) //"rate" "name"
         this.rateNameList = this.combineToProperFormat(res.data);
