@@ -14,15 +14,17 @@ export class RatesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
     axios.get("https://mabinogi-gacha.herokuapp.com/gacha/" + this.selectedGachapon)
       .then(res => {
-        console.log(res.data) //"rate" "name"
+        //console.log(res.data) //"rate" "name"
         this.rateNameList = this.combineToProperFormat(res.data);
       });
   }
 
   //Called only when gachapon changes to re-initialize the array to the new one.
   reInit(gachapon):void {
+
     axios.get("https://mabinogi-gacha.herokuapp.com/gacha/" + gachapon)
       .then(res => {
         //console.log(res.data) //"rate" "name"
