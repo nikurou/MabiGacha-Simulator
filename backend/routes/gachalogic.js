@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const fs = require('fs');
-const { ConsoleReporter } = require('jasmine');
-
 
 function gachaLogic(files){
     let numGach;
@@ -48,7 +46,6 @@ function gachaLogic(files){
                 );
             }
             Promise.all(promises).then(()=>{
-                //console.log(pools);
                 resolve();
             });
         });
@@ -56,7 +53,6 @@ function gachaLogic(files){
     }
     
     this.getList = function(){
-        //console.log('getlist' + generalList);
         return generalList;
     }
     
@@ -74,7 +70,7 @@ function gachaLogic(files){
                     
                 }
             }
-            console.log(specificPool);
+            //console.log(specificPool);
             while(!(selectedGacha === itemName)){
                 let random = Math.floor(Math.random() * pools[specificPool].length);
                 foundGacha = pools[specificPool][random].substring(0, pools[specificPool][random].length);
@@ -88,7 +84,7 @@ function gachaLogic(files){
                         foundGacha += subGacha;
                     }
                 }
-                console.log(foundGacha);
+                //console.log(foundGacha);
                 response.push((counter) + ". Obtained [" + foundGacha + "]");
                 items.push(foundGacha);
             }
@@ -133,7 +129,7 @@ function gachaLogic(files){
         totalNX += NX;
         totalUSD += NX/1000;
         let total = [response, items];
-        console.log(total);
+        //console.log(total);
         return total;
     }
 

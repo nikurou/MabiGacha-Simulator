@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
-const gachaRouter = require('./routes/gachalogic.js');
+const gachaRouter = require('./backend/routes/gachalogic.js');
 
 app.use('/gacha', gachaRouter);
 
