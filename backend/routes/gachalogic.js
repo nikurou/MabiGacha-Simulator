@@ -22,6 +22,7 @@ function gachaLogic(files){
                                 reject(new Error(`Failed to read ${files[i]}`));
                             }else{ 
                                 temp = data.toString().split(/%\t|\n/); 
+                                console.log(data.toString());
                                 let gachPool = [];
                                 let specificList = [];
                                 for(let i = 0; i < temp.length;i+=2){
@@ -77,14 +78,14 @@ function gachaLogic(files){
             }
             while(!(selectedGacha === itemName)){
                 let random = Math.floor(Math.random() * pools[specificPool].length);
-                foundGacha = pools[specificPool][random].substring(0, pools[specificPool][random].length);
+                foundGacha = pools[specificPool][random];
                 selectedGacha = foundGacha;
                 counter++;
                 for(let i = 0; i < pools.length;i++){
   
                     if(i != specificPool){
                         let tempRandom = Math.floor(Math.random() * pools[i].length);
-                        let subGacha =", " + pools[i][tempRandom].substring(0, pools[i][tempRandom].length);
+                        let subGacha =", " + pools[i][tempRandom];
                         foundGacha += subGacha;
                     }
                 }
@@ -118,7 +119,7 @@ function gachaLogic(files){
                 if(i == 0){
                     subGacha =""
                 }
-                subGacha += pools[i][random].substring(0, pools[i][random].length);
+                subGacha += pools[i][random];
                 foundGacha += subGacha;
             }
             response.push(i+1 + ". Obtained [" + foundGacha + "]");
