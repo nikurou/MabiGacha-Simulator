@@ -27,7 +27,7 @@
       <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
         <mat-tab label="Options">
           <!---Pass the selectedItem's List[] to Opt Component-->
-          <app-options #options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)"></app-options>
+          <app-options #options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)" (disableEvent) ="recieveDisabilityFromChild($event)"></app-options>
         </mat-tab>
         <mat-tab label="Console">
           <!---Pass the resultGach to Console Component-->
@@ -43,6 +43,13 @@
     <!--On Click, make it go to the Console Tab-->
     <!--When this button is clicked, it changes tab to Console Tab, Builds/Sends link to Parent, and calls gach()-->
     <!--Button is only disabled if the item user selected is not possible. Sent from Options.-->
-    <button mat-button disabled = "{{options.disable}}" (click)="tabGroup.selectedIndex=1; options.sendToParent(); gach(); console.gachPushResults();" >GACH</button> 
+    
+    <button mat-button disabled = "{{buttonDisable(disable)}}" (click)=" tabGroup.selectedIndex=1; 
+                                                          options.sendToParent(); 
+                                                          options.sendDisabilityToParent(); 
+                                                          gach(); 
+                                                          console.gachPushResults(); 
+                                                          setTimeOut(2000);">
+    GACH</button> 
   </mat-card-actions>
 </mat-card>
