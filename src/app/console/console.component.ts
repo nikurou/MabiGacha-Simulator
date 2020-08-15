@@ -48,7 +48,7 @@ export class ConsoleComponent implements OnInit {
     if (this.slowEnabled == false) {
       //Hacky workaround to give currResultGach time to be passed from gacha-UI. without this, 
       // it gives the list from the last gach batch. 
-      setTimeout(() => { this.resultGach = this.resultGach.concat(this.currResultGach); }, 100);
+      setTimeout(() => { this.resultGach = this.resultGach.concat(this.currResultGach); }, 600);
     }
     else if (this.slowEnabled == true) {
 
