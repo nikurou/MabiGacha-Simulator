@@ -19,7 +19,7 @@
                 <form method="get" name="item">
                     <label for="browser">Gach until specified item appears: </label>
                     <!--Bug where you can select items that do not exist!-->
-                    <input type ="text" name="listItems" list="items" autocomplete="off" [(ngModel)] ="selectedItem" (change) = "onSelect($event, 'specific')">
+                    <input type ="text" name="listItems" list="items" autocomplete="off" [(ngModel)] ="selectedItem" (change) = "onSelect($event, 'specific'); sendDisabilityToParent();">
                     <datalist id="items">
                         <option *ngFor ="let item of selectedList" >
                             {{item}}
