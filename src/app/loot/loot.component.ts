@@ -61,7 +61,7 @@ export class LootComponent implements OnInit {
     if(ELEMENT_DATA.length == 0){
       this.topMessage = "you refreshed...but it's still empty";
     }
-    else if*ELEMENT_DATA.length >= 1 && ELEMENT_DATA.length < 100){
+    else if(ELEMENT_DATA.length >= 1 && ELEMENT_DATA.length < 100){
       this.topMessage = "those are some rookie numbers!";
     }
     else if(ELEMENT_DATA.length >= 100 && ELEMENT_DATA.length < 200){
