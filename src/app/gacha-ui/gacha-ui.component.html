@@ -31,7 +31,7 @@
         </mat-tab>
         <mat-tab label="Console">
           <!---Pass the resultGach to Console Component-->
-          <app-console #console  [currResultGach] = "currResultGach"></app-console>
+          <app-console #console  [currResultGach] = "currResultGach"  (slowModeStatus)= recieveSlowModeStatus($event) ></app-console>
         </mat-tab>
         <mat-tab label="Rates">
           <app-rates #rates [selectedGachapon] = "selectedGachapon"></app-rates>
@@ -49,7 +49,7 @@
                                                           options.sendDisabilityToParent(); 
                                                           gach(); 
                                                           console.gachPushResults(); 
-                                                          setTimeOut(2000);">
+                                                          ">
     GACH</button> 
   </mat-card-actions>
 </mat-card>
