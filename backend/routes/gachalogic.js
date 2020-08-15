@@ -22,7 +22,6 @@ function gachaLogic(files){
                                 reject(new Error(`Failed to read ${files[i]}`));
                             }else{ 
                                 temp = data.toString().split(/%\t|\n/); 
-                                console.log(data.toString());
                                 let gachPool = [];
                                 let specificList = [];
                                 for(let i = 0; i < temp.length;i+=2){
@@ -30,11 +29,14 @@ function gachaLogic(files){
                                     generalList.push(temp[i]+'%');
                                     let itemToAdd; 
                                     if(i < temp.length-2){
-                                        itemToAdd = temp[i+1].substring(0,temp[i+1].length-1);
+                                        //on heroku it doesnt read the empty space
+                                        itemToAdd = temp[i+1].substring(0,temp[i+1].length);
+                                        //on local it reads an extra space 
+                                        //itemToAdd = temp[i+1].substring(0,temp[i+1].length-1);
                                     }else{
                                         itemToAdd = temp[i+1];
                                     }
-                                    console.log(`${itemToAdd}: ${itemToAdd.length}`);
+
                                     generalList.push(itemToAdd);
                                     specificList.push(itemToAdd);
                                     for(let j = 0; j < numItem;j++){
