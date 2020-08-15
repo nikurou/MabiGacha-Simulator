@@ -1,68 +1,101 @@
 const router = require('express').Router();
 const fs = require('fs');
+const { ConsoleReporter } = require('jasmine');
 
 
-function gachaLogic(fileName){
+function gachaLogic(files){
     let numGach;
     let totalNX, totalUSD;
-    let gachPool = [];
-    this.fileName = fileName;
+    let pools = [];
+    this.fileName = files[0];
     let generalList = [];
+    let listOfGachas = [];
+    let promises = [];
 
+    
     this.readFile = function(){
         return new Promise(function (resolve, reject) {
-            fs.readFile(fileName, (err, data) => { 
-                if (err) {
-                    () => reject(new Error(`Failed to read ${this.fileName}`));
-                }else{ 
-                    temp = data.toString().split(/%\t|\n/); 
-                    for(let i = 0; i < temp.length;i+=2){
-                        let numItem = temp[i] * 10;
-                        generalList.push(temp[i]+'%');
-
-                        let itemToAdd; 
-                        if(i < temp.length-2){
-                            itemToAdd = temp[i+1].substring(0,temp[i+1].length-1);
-                        }else{
-                            itemToAdd = temp[i+1];
-                        }
-                        generalList.push(itemToAdd);
-
-                        for(let j = 0; j < numItem;j++){
-                            gachPool.push(itemToAdd);
-                        }
-                    }
-                    resolve(gachPool);
-                }
-            }); 
+            for(let i = 0; i < files.length;i++){
+                promises.push(
+                    new Promise(function (resolve, reject) {
+                        fs.readFile(files[i], (err, data) => { 
+                            if (err) {
+                                () => reject(new Error(`Failed to read ${files[i]}`));
+                            }else{ 
+                                temp = data.toString().split(/%\t|\n/); 
+                                let gachPool = [];
+                                let specificList = [];
+                                for(let i = 0; i < temp.length;i+=2){
+                                    let numItem = temp[i] * 10;
+                                    generalList.push(temp[i]+'%');
+                                    let itemToAdd; 
+                                    if(i < temp.length-2){
+                                        itemToAdd = temp[i+1].substring(0,temp[i+1].length-1);
+                                    }else{
+                                        itemToAdd = temp[i+1];
+                                    }
+                                    generalList.push(itemToAdd);
+                                    specificList.push(itemToAdd);
+                                    for(let j = 0; j < numItem;j++){
+                                        gachPool.push(itemToAdd);
+                                    }
+                                }
+                                listOfGachas.push(specificList);
+                                resolve(pools.push(gachPool));
+                            }
+                        });
+                    })
+                );
+            }
+            Promise.all(promises).then(()=>{
+                //console.log(pools);
+                resolve();
+            });
         });
+
     }
     
     this.getList = function(){
+        //console.log('getlist' + generalList);
         return generalList;
     }
     
-    this.isInList = function(item){
-        return gachPool.includes(item);
-    }
-
     this.singleGach = function(itemName) {
         let response = [];
         let items = [];
         let counter = 0;
         let foundGacha = "";
-
-        if(gachPool.includes(itemName)){
-            while(!(foundGacha === itemName)){
-                let random = Math.floor(Math.random() * gachPool.length);
-                foundGacha = gachPool[random];
+        let selectedGacha = ""
+        if(generalList.includes(itemName)){
+            let specificPool;
+            for(let i = 0; i < listOfGachas.length;i++){
+                if(listOfGachas[i].includes(itemName)){
+                    specificPool = i
+                    
+                }
+            }
+            console.log(specificPool);
+            while(!(selectedGacha === itemName)){
+                let random = Math.floor(Math.random() * pools[specificPool].length);
+                foundGacha = pools[specificPool][random].substring(0, pools[specificPool][random].length);
+                selectedGacha = foundGacha;
                 counter++;
-                response.push((counter) + ". Obtained [" + foundGacha.substring(0,foundGacha.length) + "]");
-                items.push(foundGacha.substring(0,foundGacha.length));
+                for(let i = 0; i < pools.length;i++){
+  
+                    if(i != specificPool){
+                        let tempRandom = Math.floor(Math.random() * pools[i].length);
+                        let subGacha =", " + pools[i][tempRandom].substring(0, pools[i][tempRandom].length);
+                        foundGacha += subGacha;
+                    }
+                }
+                console.log(foundGacha);
+                response.push((counter) + ". Obtained [" + foundGacha + "]");
+                items.push(foundGacha);
             }
 
             let NX = counter*1500;
-            response.push("Found your item in " + counter +" tries and " + "spent a total of " + NX +" NX! or $" + (NX/1000) + " USD");
+            //response.push("Found your item in " + counter +" tries and " + "spent a total of " + NX +" NX! or $" + (NX/1000) + " USD");
+            response.push("");
             numGach += counter;
             totalNX += NX;
             totalUSD += NX/1000;
@@ -79,14 +112,23 @@ function gachaLogic(fileName){
         let items = [];
 
         for(let i = 0; i < amountGacha; i ++){
-            let random = Math.floor(Math.random() * gachPool.length);
-            let foundGacha = gachPool[random];
-            response.push(i+1 + ". Obtained [" + foundGacha.substring(0,foundGacha.length) + "]");
-            items.push(foundGacha.substring(0,foundGacha.length));
+            let foundGacha = "";
+            for(let i = 0; i < pools.length;i++){
+                let random = Math.floor(Math.random() * pools[i].length);
+                let subGacha =", ";
+                if(i == 0){
+                    subGacha =""
+                }
+                subGacha += pools[i][random].substring(0, pools[i][random].length);
+                foundGacha += subGacha;
+            }
+            response.push(i+1 + ". Obtained [" + foundGacha + "]");
+            items.push(foundGacha);
         }
 
         let NX = amountGacha*1500;
-        response.push("You spent " + (NX) +" NX on " + amountGacha + " gachas.");
+        //response.push("You spent " + (NX) +" NX on " + amountGacha + " gachas.");
+        response.push("");
         numGach+=amountGacha;
         totalNX += NX;
         totalUSD += NX/1000;
@@ -104,13 +146,22 @@ promiseSwitch = function(gachaName){
     return new Promise(function (resolve, reject) {
         switch(gachaName){
             case "Forest Ranger Bag Gachapon": 
-                resolve(new gachaLogic("textfiles/Forest_Ranger_Bag_Gachapon.txt"));
+                resolve(new gachaLogic(["textfiles/Forest_Ranger_Bag_Gachapon.txt"]));
                 break;
             case "Secret Garden Box": 
-                resolve(new gachaLogic("textfiles/Secret_Garden_Box_Gachapon.txt"));
+                resolve(new gachaLogic(["textfiles/Secret_Garden_Box_Gachapon.txt"]));
                 break;
             case "Crow Feather Box": 
-                resolve(new gachaLogic("textfiles/Crow_Feather_Box_Gachapon.txt"));
+                resolve(new gachaLogic(["textfiles/Crow_Feather_Box_Gachapon.txt"]));
+                break;
+            case "Erinn Beauty Box": 
+                resolve( 
+                    new gachaLogic([
+                        "textfiles/Erinn_Beauty_Box_Hair.txt",
+                        "textfiles/Erinn_Beauty_Box_EFM.txt",
+                        "textfiles/Erinn_Beauty_Box_Voucher.txt"
+                    ])
+                );
                 break;
         } 
     });
@@ -119,7 +170,8 @@ promiseSwitch = function(gachaName){
 router.route('/:gachaName/').get((req, res) => {
     promiseSwitch(req.params.gachaName).then((gacha)=>{
         gacha.readFile().then(() =>{
-            return res.json(gacha.getList());
+            let result = gacha.getList();
+            return res.json(result);
         }).catch((error) =>{
             console.error(error);
         });

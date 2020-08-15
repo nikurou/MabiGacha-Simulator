@@ -84,20 +84,24 @@ export class GachaUIComponent {
         let numItems = res.data[1].length;
         this.totalGacha = (parseInt(this.totalGacha, 10) + numItems).toString(); 
         localStorage.setItem("Total Gacha", this.totalGacha);
-        //(NumItems/45) * 57500 + ((NumItems%45)/11)*15,000 + ((numItems%45)%11) * 1,500;
+
         let fortyfive = (numItems - numItems%45)/45 * 57500;
         let eleven = (numItems%45 - (numItems%45)%11)/11 * 15000;
         let one = (numItems%45)%11 * 1500;
         this.totalNX = (parseInt(this.totalNX, 10) + (fortyfive + eleven + one)).toString();
         localStorage.setItem("Total NX", this.totalNX);
         for(let i = 0; i < res.data[1].length;i++){
-            if(localStorage.getItem(res.data[1][i])===null){
-                localStorage.setItem(res.data[1][i], "1");
-            }else{
-                let quantity = parseInt(localStorage.getItem(res.data[1][i]),10) + 1;
-                localStorage.setItem(res.data[1][i], quantity.toString());
+            let separated = res.data[1][i].split(/, /);
+            for(let j = 0; j < separated.length;j++){
+                if(localStorage.getItem(separated[j])===null){
+                    localStorage.setItem(separated[j], "1");
+                }else{
+                    let quantity = parseInt(localStorage.getItem(separated[j]),10) + 1;
+                    localStorage.setItem(separated[j], quantity.toString());
+                }
             }
         }
+
       });
   }
 

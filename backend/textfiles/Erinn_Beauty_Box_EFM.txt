@@ -1,0 +1,128 @@
+0.13%	Awakened Eyes (Frenzied Red) Beauty Coupon
+0.13%	Awakened Eyes (Frenzied Blue) Beauty Coupon
+0.13%	Twinkling Starlight Eyes (Dim Starlight) Beauty Coupon
+0.13%	Guardian's Eyes (Flaming Red) Beauty Coupon
+0.13%	Guardian's Eyes (Flaming Blue) Beauty Coupon
+0.13%	Eyes of Madness (Explosive Blue) Beauty Coupon
+0.13%	Eyes of Madness (Fanatical Glint) Beauty Coupon
+0.13%	White-Crested Warrior's Eyes (Fighting Spirit Red) Beauty Coupon
+0.13%	Warrior's Eyes (Fighting Spirit Blue) Beauty Coupon
+0.13%	White-Crested Sage's Eyes (Red Reticle) Beauty Coupon
+0.13%	Sage's Eyes (Yellow Reticle) Beauty Coupon
+0.13%	Student's Eyes (Intellectual) Beauty Coupon
+0.13%	Specter's Eyes (Ghostly Reflection) Beauty Coupon
+0.13%	World-Wise Eyes (Blue Spark) Beauty Coupon
+0.13%	World-Wise Eyes (Red Spark) Beauty Coupon
+0.13%	Forlorn Eyes (Teary-Eyed) Beauty Coupon
+0.13%	Forlorn Eyes (Twinkling Tears) Beauty Coupon
+0.13%	Twinkling Starlight Eyes (Two-Tone) Beauty Coupon
+0.13%	Keen Eyes (Two-Tone) Beauty Coupon
+0.13%	Guardian's Eyes (Two-Tone) Beauty Coupon
+0.13%	White-Crested Warrior's Eyes (Two-Tone) Beauty Coupon
+0.13%	Warrior's Eyes (Two-Tone) Beauty Coupon
+0.13%	White-Crested Sage's Eyes (Two-Tone) Beauty Coupon
+0.13%	Sage's Eyes (Two-Tone) Beauty Coupon
+0.13%	Student's Eyes (Two-Tone) Beauty Coupon
+0.13%	Specter's Eyes (Two-Tone) Beauty Coupon
+0.13%	Averted Gaze Eyes (Two-Tone) Beauty Coupon
+0.13%	World-Wise Eyes (Two-Tone) Beauty Coupon
+0.13%	Cute Heart Eyes (Two-Tone) Beauty Coupon
+0.13%	Forlorn Eyes (Two-Tone) Beauty Coupon
+0.13%	Sorrowful Eyes (Two-Tone) Beauty Coupon
+0.13%	Darkness-Piercing Eyes Beauty Coupon
+0.13%	Thick Eyelash Eyes Beauty Coupon
+0.13%	Two-Tone Pentacle Eyes Beauty Coupon
+0.16%	Heavenly Eyes Beauty Coupon
+0.16%	Two-Tone Serene Eyes Beauty Coupon
+0.26%	Two-Tone Watchful Eyes Beauty Coupon
+0.26%	Two-Tone Sunken Eyes Beauty Coupon
+0.26%	Azure Eyes Beauty Coupon
+0.26%	Two-Tone Azure Eyes Beauty Coupon
+0.26%	Two-Tone Daydreaming Eyes Beauty Coupon
+0.26%	Two-Tone Starry Cloud Eyes Beauty Coupon
+0.26%	Two-Tone Coy Cat Eyes Beauty Coupon
+0.26%	Two-Tone Darling Eyes Beauty Coupon
+0.26%	Two-Tone Wide Glittering Eyes Beauty Coupon
+0.60%	Sleeping Eyes Beauty Coupon
+0.47%	Slightly Sulky Mouth Beauty Coupon
+0.47%	Slightly-Bit Lips Beauty Coupon
+0.47%	Slight Smile Mouth Beauty Coupon
+0.47%	Doubtful Mouth Beauty Coupon
+0.47%	Slightly Opened Pink Lips Beauty Coupon
+0.47%	Inspired Mouth Beauty Coupon
+0.47%	Brusque Mouth Beauty Coupon
+0.60%	Invisible Mouth Beauty Coupon
+0.60%	Gentle Smile Beauty Coupon
+0.60%	Bright Smile Beauty Coupon
+0.60%	Rosy Smile Beauty Coupon
+0.60%	Pleasant Smile Beauty Coupon
+0.60%	Chatty Mouth Beauty Coupon
+0.60%	Easygoing Grin Beauty Coupon
+0.60%	Satisfied Smile Beauty Coupon
+0.60%	Feline Smile Beauty Coupon
+0.60%	Forlorn Mouth Beauty Coupon
+0.60%	Drowsy Mouth Beauty Coupon
+0.60%	Mature Heart Star Face Beauty Coupon (F)
+0.60%	Cute Heart Star Face Beauty Coupon (F)
+0.60%	Sharp Heart Star Face Beauty Coupon (F)
+0.60%	Youthful Heart Star Face Beauty Coupon (F)
+0.60%	Pointy Heart Star Face Beauty Coupon (M)
+0.60%	Cute Heart Star Face Beauty Coupon (M)
+0.60%	Serious Heart Star Face Beauty Coupon (M)
+0.60%	Imposing Boy Heart Star Face Beauty Coupon (M)
+0.60%	Droopy Ears Heart Star Face Beauty Coupon (F)
+0.60%	Petite Ears Heart Star Face Beauty Coupon (F)
+0.60%	Droopy Ears Heart Star Face Beauty Coupon (M)
+0.60%	Petite Ears Heart Star Face Beauty Coupon (M)
+0.60%	Heart Star Face Beauty Coupon (F)
+0.60%	Heart Star Face Beauty Coup on (M)
+0.60%	Mature Maelstrom Face Beauty Coupon (F)
+0.60%	Plump Maelstrom Face Beauty Coupon (F)
+0.60%	Sharp Maelstrom Face Beauty Coupon (F)
+0.60%	Youthful Maelstrom Face Beauty Coupon (F)
+0.60%	Pointy Maelstrom Face Beauty Coupon (M)
+0.60%	Cute Maelstrom Face Beauty Coupon (M)
+0.60%	Serious Maelstrom Face Beauty Coupon (M)
+0.60%	Imposing Boy Maelstrom Face Beauty Coupon (M)
+0.60%	Droopy Ears Maelstrom Face Beauty Coupon (F)
+0.60%	Petite Ears Maelstrom Face Beauty Coupon (F)
+0.60%	Droopy Ears Maelstrom Face Beauty Coupon (M)
+0.60%	Petite Ears Maelstrom Face Beauty Coupon (M)
+0.60%	Maelstrom Face Beauty Coupon (F)
+0.60%	Maelstrom Face Beauty Coupon (M)
+1.57%	Cold Scorn Eyes Beauty Coupon
+1.31%	Mature Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Plump Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Sharp Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Youthful Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Pointy Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Cute Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Serious Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Imposing Boy Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Droopy Ears Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Petite Ears Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Droopy Ears Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Petite Ears Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.31%	Small Mouth Beauty Mark Face Beauty Coupon (F)
+1.31%	Small Mouth Beauty Mark Face Beauty Coupon (M)
+1.57%	Pit-a-Pat Morning Lips Beauty Coupon
+1.57%	Vayne Mouth Beauty Coupon
+1.57%	Starry Cloud Eyes Beauty Coupon
+1.57%	Glittering Eyes Beauty Coupon
+1.57%	Obsessive Eyes Beauty Coupon
+2.36%	Sultry Eyes Beauty Coupon
+2.36%	Tempting Smoky Eyes Beauty Coupon
+2.36%	Dark Fairy Eyes Beauty Coupon
+2.36%	Wide Glittering Eyes Beauty Coupon
+2.36%	Sharp Gaze Eyes Beauty Coupon
+2.36%	Hypnotized Eyes Beauty Coupon
+2.36%	Petite Ears Blush Face Beauty Coupon (F)
+2.36%	Cordial Smile Beauty Coupon
+2.36%	Cherry Lips Beauty Coupon
+2.36%	Smug Mouth Beauty Coupon
+2.36%	Thoughtful Eyes Beauty Coupon
+2.36%	Calm Eyes Beauty Coupon
+2.36%	Shocked Disbelief Mouth Beauty Coupon
+2.36%	Tight-lipped Mouth Beauty Coupon
+2.36%	Deceiving Eyes Beauty Coupon
+2.36%	Starstruck Eyes Beauty Coupon
