@@ -2,9 +2,9 @@
   "name": "mabinogi-gacha",
   "version": "0.0.0",
   "scripts": {
+    "start": "node server.js",
     "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
