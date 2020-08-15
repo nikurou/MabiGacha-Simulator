@@ -34,9 +34,9 @@ export class GachaUIComponent {
 
   gachas = [
     new Gachapon('Secret Garden Box', 'assets/img/mabinogi-secret-garden-box-webicon.png'),
-    new Gachapon('Crow Feather Box', 'http://nxcache.nexon.net/cms/2020/q2/1894/mabinogi-crow-feather-box.png'),
-    new Gachapon('Forest Ranger Bag Gachapon', 'http://nxcache.nexon.net/cms/2019/q4/2120/forest-guardian_basic.png'),
-    new Gachapon('Erinn Beauty Box', 'http://nxcache.nexon.net/cms/2020/q3/1711/mabinogi-erinn-beauty-box-webicon.png'),
+    new Gachapon('Crow Feather Box', 'assets/img/mabinogi-crow-feather-box.png'),
+    new Gachapon('Forest Ranger Bag Gachapon', 'assets/img/forest-guardian_basic.png'),
+    new Gachapon('Erinn Beauty Box', 'src/assets/img/mabinogi-erinn-beauty-box-webicon.png'),
   ]
 
   constructor() {
