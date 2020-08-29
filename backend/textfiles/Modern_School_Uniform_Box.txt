@@ -1,0 +1,158 @@
+0.13%	Special Modern School Uniform (M)
+0.13%	Special Modern School Uniform (F)
+0.16%	Modern School Wig (M)
+0.16%	Modern School Wig (F)
+0.20%	Modern School Wig and Glasses (M)
+0.20%	Modern School Wig and Glasses (F)
+0.22%	Modern School Uniform (M)
+0.22%	Modern School Uniform (F)
+0.31%	Modern School Shoes (M)
+0.31%	Modern School Shoes (F)
+0.16%	Homestead Campus Gate
+0.16%	Homestead Campus Break Area
+0.16%	Homestead Tree of Confession
+0.09%	Special Autumn Leaves 2nd Title Coupon
+0.09%	Special Dazzling Dragonfly 2nd Title Coupon
+0.09%	Special Blooming Cosmos 2nd Title Coupon
+0.09%	Altam 2nd Title Coupon
+0.09%	Pihne 2nd Title Coupon
+0.16%	Talvish 2nd Title Coupon
+0.16%	Avelin 2nd Title Coupon
+0.16%	Caswyn 2nd Title Coupon
+0.16%	Llywelyn 2nd Title Coupon
+0.11%	Special Superstar 2nd Title Coupon
+0.11%	Special Biting Wind 2nd Title Coupon
+0.13%	Flowy Shaman Wig (M)
+0.13%	Flowy Altam Wig (M)
+0.13%	Flowy Winter Queen Argenta Wig (F)
+0.20%	Private Academy Junior Uniform (F)
+0.20%	Private Academy Senior Uniform (F)
+0.23%	Private Academy Riding Uniform (M)
+0.23%	Private Academy Riding Uniform (F)
+0.20%	Casual Date Wear with Suspenders (M)
+0.20%	Casual Date Wear with Bunny Bag (F)
+0.20%	Casual Date Wear (M)
+0.20%	Casual Date Wear (F)
+0.20%	Casual Date Sneakers
+0.23%	Special Camping Wear (M)
+0.23%	Special Camping Wear (F)
+0.16%	Homestead Camping Companions Set
+0.16%	Homestead Camping Enthusiasts Set
+0.23%	Shooting Star Flying Shoes
+0.23%	Shooting Star Roller Skates
+0.36%	Private Academy Junior Uniform (M)
+0.36%	Private Academy Senior Uniform (M)
+0.36%	Adventurer's L-Rod
+0.36%	Modern School Gym Bag
+0.36%	Autumn Leaves 2nd Title Coupon
+0.36%	Dazzling Dragonfly 2nd Title Coupon
+0.36%	Blooming Cosmos 2nd Title Coupon
+0.36%	Bookshelf and Beanbag Chair
+0.54%	Classic Diner Booth
+0.54%	School Lockers
+0.54%	Teacher's Pet Assembly Desk
+0.54%	Crash Studier Assembly Desk
+0.54%	Class Slacker Assembly Desk
+0.36%	Camping Wear (M)
+0.36%	Camping Wear (F)
+0.43%	Camping Hat (M)
+0.43%	Camping Wig and Bandanna (F)
+0.47%	Camping Patterned Wristband (M)
+0.47%	Camping Patterned Wristband (F)
+0.47%	Camping All-Weather Boots (M)
+0.47%	Camping All-Weather Boots (F)
+0.58%	Roller Skates
+0.47%	Casual Date Bunny Ears and Bow Headband
+0.54%	Casual Date Watch
+0.58%	Casual Date Glow Bracelets
+0.65%	Casual Date Glowing Stars Headband
+0.65%	Battle School Mask (M)
+0.58%	Summer School Uniform (M)
+0.58%	Summer School Uniform (F)
+0.25%	Homestead Camping Sleeping Bags Set
+0.25%	Homestead All-Terrain Bike
+0.25%	Homestead All-Terrain Bike and Trailer
+0.25%	Homestead All-Terrain Bike Set
+0.25%	Homestead Camping Campfire Set
+0.25%	Homestead Camping Table Set
+0.25%	Homestead Camping Tent Set
+0.25%	Homestead Camping Bicycle Set
+0.25%	Homestead Camping Barbecue Party Set
+0.25%	Homestead Camping Buddies Set
+0.72%	Homestead Maple Tree
+0.36%	Homestead Small Tent
+0.36%	Homestead Large Tent
+0.65%	Kaour 2nd Title Coupon
+0.65%	Superstar 2nd Title Coupon
+0.65%	Biting Wind 2nd Title Coupon
+0.65%	Tupai 2nd Title Coupon
+0.65%	Portia 2nd Title Coupon
+0.65%	Dark Lord 2nd Title Coupon
+0.65%	God's Feather 2nd Title Coupon
+0.65%	Synthesis Training Potion
+0.72%	Private Academy Riding Gloves
+0.72%	Private Academy Riding Boots (M)
+0.72%	Private Academy Riding Boots (F)
+0.72%	Private Academy Loafers (M)
+0.72%	Private Academy Loafers (F)
+0.65%	Battle School Uniform (M)
+0.65%	Battle School Uniform (F)
+1.19%	Battle School Gloves (M)
+1.19%	Battle School Gloves (F)
+1.19%	Battle School Boots (M)
+1.19%	Battle School Boots (F)
+1.19%	Battle School Eye Patch (F)
+0.83%	Critical Hit Training Potion
+0.83%	Refining Training Potion
+1.08%	Pig Knife
+1.08%	Pig Table
+1.08%	Pig Ladle
+0.83%	Pig Cooking Pot
+0.83%	Chain Impale Training Potion
+0.83%	Chain Crush Training Potion
+1.08%	Elsie 2nd Title Coupon
+1.08%	Eirlys 2nd Title Coupon
+1.08%	Dai 2nd Title Coupon
+1.08%	Kanna 2nd Title Coupon
+1.08%	Logan 2nd Title Coupon
+1.16%	Juliet 2nd Title Coupon
+1.16%	Hamlet 2nd Title Coupon
+1.16%	Lassar 2nd Title Coupon
+1.16%	Ruwai 2nd Title Coupon
+0.54%	Homestead Small Astronomical Telescope
+0.54%	Homestead Large Astronomical Telescope
+0.54%	Homestead Small Barbecue Grill
+0.54%	Homestead Large Barbecue Grill
+0.54%	Homestead Small Hammock
+0.54%	Homestead Large Hammock
+0.54%	Homestead Small Sleeping Bag
+0.54%	Homestead Large Sleeping Bag
+0.72%	Homestead Marshmallow Campfire
+0.72%	Homestead Cooking Table
+1.23%	Partner Likeability Increase Candy (30) x5
+1.23%	Homestead Golden Sprout x10
+1.23%	Speed Walk Potion 40% (30 min)
+1.23%	Attack Delay Reduction Potion (10 min) x10
+1.19%	Private Academy Riding Hat (M)
+1.19%	Private Academy Riding Hat (F)
+1.19%	Private Academy Shoes (M)
+1.19%	Private Academy Shoes (F)
+1.34%	Summer School Uniform (Giant M)
+1.34%	Summer School Uniform (Giant F)
+1.37%	Kusina 2nd Title Coupon
+1.37%	Lileas 2nd Title Coupon
+1.37%	Transport Helper Ogre 2nd Title Coupon
+1.37%	Nessa 2nd Title Coupon
+1.37%	Ibbie 2nd Title Coupon
+1.37%	Shena 2nd Title Coupon
+1.37%	Bebhinn 2nd Title Coupon
+1.37%	Shop Brownie 2nd Title Coupon
+1.37%	Alissa 2nd Title Coupon
+1.37%	Effie 2nd Title Coupon
+1.37%	Endelyon 2nd Title Coupon
+1.37%	Carasek 2nd Title Coupon
+1.37%	Ferghus 2nd Title Coupon
+1.37%	Merchant Imp 2nd Title Coupon
+1.37%	Pan 2nd Title Coupon
+1.37%	Redire 2nd Title Coupon
+1.37%	Andras 2nd Title Coupon
