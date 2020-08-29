@@ -165,6 +165,14 @@ promiseSwitch = function(gachaName){
                     ])
                 );
                 break;
+            case "Modern School Uniform Box":
+                resolve(
+                    new gachaLogic([
+                        "./backend/textfiles/Modern_School_Uniform_Box.txt",
+                        "./backend/textfiles/Modern_School_Uniform_Box_Bounty_Package.txt"
+                    ])
+                )
+                break;
         } 
     });
 }
