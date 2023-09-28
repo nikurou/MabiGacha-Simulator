@@ -121,7 +121,6 @@
       }
     }
   },
-  "defaultProject": "mabinogi-gacha",
   "cli": {
     "analytics": false
   }
