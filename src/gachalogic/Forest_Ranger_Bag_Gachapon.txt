@@ -17,7 +17,7 @@
 0.13%	Black Forest Leaf Muffler Wings (Dyeable)
 0.13%	White Forest Leaf Muffler Wings (Dyeable)
 0.15%	Forest Ranger Gloves (M)
-0.15%	Forest Ranger Gloves (F))
+0.15%	Forest Ranger Gloves (F)
 0.15%	Forest Ranger Wig and Hat (M)
 0.15%	Forest Ranger Wig and Hat (F)
 0.24%	Red Forest Aura Halo

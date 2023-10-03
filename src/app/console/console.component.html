@@ -1,12 +1,17 @@
-<div class = "console" #scrollframe >
-  
-  <div class = "header" >
-    
-    <h1  ><mat-slide-toggle (change) = "toggleSlowMode(); sendSlowModeStatus();"> Slow Mo! (Applied on next gach)</mat-slide-toggle></h1>
-  </div>
-  <h1 style = "display:inline-block;">Console Log </h1>
+<div class="console" #scrollframe>
 
-    <div *ngFor = "let result of resultGach" class = "item" #item> 
-      <p>{{result}}</p>
+  <div class="header">
+
+    <h1><mat-slide-toggle (change)="toggleSlowMode(); sendSlowModeStatus();"> Slow Mo! (Applied on next
+        gach)</mat-slide-toggle></h1>
+  </div>
+  <h1 style="display:inline-block;">Console Log </h1>
+
+  <div *ngFor="let result of resultGach;let last = last;" class="item" #item>
+    <p>You have obtained [{{result}}].</p>
+    <div *ngIf="last">
+      <hr />
+      <p>You obtained these results after opening <b>{{resultGach.length}}</b> gachapons.</p>
     </div>
   </div>
+</div>

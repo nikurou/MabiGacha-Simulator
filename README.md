@@ -2,8 +2,12 @@
 
 Accurately simulates a lootbox for Nexon's popular MMORPG title, Mabinogi. Supports features such as multi-gaching and continous gaching until user specified item is found. 
 
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+# R1.0.1 Changelog
+ - Upgraded Angular/Angular CLI/Angular Material from Version 10 to Version 14.
+ - Updated TypeScript and other dependencies.
+ - Removed calls to defunct backend database (no longer hosted) and re-implemented all the gacha logic to be handled locally. 
+ - Fixed long standing bug where Loot Table would not update dynamically unless user refreshed. 
+ - Updated the data structure that is stored to user's cache to be a single JSON object. 
 
 ## Development server
 

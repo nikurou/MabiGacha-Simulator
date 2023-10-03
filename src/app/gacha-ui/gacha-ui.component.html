@@ -2,54 +2,60 @@
 
   <!--Card Header-->
   <mat-card-header>
-    <div mat-card-avatar class="header-image" style = "background-image: url( {{selectedImage}} );"></div>
+    <div mat-card-avatar class="header-image" style="background-image: url( {{selectedImage}} );"></div>
     <mat-card-title>
       <button mat-button [matMenuTriggerFor]="menu"> {{selectedGachapon}} <img
           src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha" (click)="selectedItem(gacha); tabGroup.selectedIndex=0; rates.reInit(selectedGachapon); options.clearTheSearch();">
+        <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha"
+          (click)="selectedItem(gacha); tabGroup.selectedIndex=0; rates.reInit(selectedGachapon); options.clearTheSearch();">
           {{gacha.gachaName}}
         </button>
 
       </mat-menu>
     </mat-card-title>
-    <mat-card-subtitle> <b>Current Expenditure:</b> {{totalNX}} NX <b>Number of Gachas:</b> {{totalGacha}}</mat-card-subtitle>
+    <mat-card-subtitle> <b>Current Expenditure:</b> {{totalNX}} NX <b>Number of Gachas:</b>
+      {{numTotalGacha}}</mat-card-subtitle>
 
   </mat-card-header>
 
   <!--Gachapon's Image-->
-                          <!--Transparent Pixel-->
-  <img mat-card-image src="data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" style = "background-image: url( {{selectedImage}} );">
-  
+  <!--Transparent Pixel-->
+  <img mat-card-image src="data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+    style="background-image: url( {{selectedImage}} );">
+
 
   <!--Tab Displays (Component Switcher)-->
-    
-      <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
-        <mat-tab label="Options">
-          <!---Pass the selectedItem's List[] to Opt Component-->
-          <app-options #options [selectedList]="selectedList" [selectedGachapon] = "selectedGachapon" (messageEvent)="receiveFromChild($event)" (disableEvent) ="recieveDisabilityFromChild($event)"></app-options>
-        </mat-tab>
-        <mat-tab label="Console">
-          <!---Pass the resultGach to Console Component-->
-          <app-console #console  [currResultGach] = "currResultGach"  (slowModeStatus)= recieveSlowModeStatus($event) ></app-console>
-        </mat-tab>
-        <mat-tab label="Rates">
-          <app-rates #rates [selectedGachapon] = "selectedGachapon"></app-rates>
-        </mat-tab>
-      </mat-tab-group>
+
+  <mat-tab-group dynamicHeight animationDuration="0ms" #tabGroup>
+    <mat-tab label="Options">
+      <!---Pass the selectedItem's List[] to Opt Component-->
+      <app-options #options [selectedList]="selectedList" [selectedGachapon]="selectedGachapon"
+        (disableEvent)="recieveDisabilityFromChild($event)"
+        (selectedOptionsEvent)="recieveOptionsFromChild($event)"></app-options>
+    </mat-tab>
+    <mat-tab label="Console">
+      <!---Pass the resultGach to Console Component-->
+      <app-console #console [currResultGach]="currResultGach"
+        (slowModeStatus)=recieveSlowModeStatus($event)></app-console>
+    </mat-tab>
+    <mat-tab label="Rates">
+      <app-rates #rates [selectedGachapon]="selectedGachapon"></app-rates>
+    </mat-tab>
+  </mat-tab-group>
 
   <!--The Gach Button-->
   <mat-card-actions>
     <!--On Click, make it go to the Console Tab-->
     <!--When this button is clicked, it changes tab to Console Tab, Builds/Sends link to Parent, and calls gach()-->
     <!--Button is only disabled if the item user selected is not possible. Sent from Options.-->
-    
-    <button mat-button disabled = "{{buttonDisable(disable)}}" (click)=" tabGroup.selectedIndex=1; 
-                                                          options.sendToParent(); 
+
+    <button mat-button disabled="{{buttonDisable(disable)}}" (click)=" tabGroup.selectedIndex=1; 
                                                           options.sendDisabilityToParent(); 
+                                                          options.shareOptionsWithParent();
                                                           gach(); 
                                                           console.gachPushResults(); 
                                                           ">
-    GACH</button> 
+      GACH</button>
   </mat-card-actions>
 </mat-card>

@@ -1,49 +1,82 @@
 <html>
-    <div class="content" role="main">
-        <body>
-            <h1>Mabinogi Gachapon Simulator.</h1>
-            <p> Hey fellow <a href="https://wiki.mabinogiworld.com/view/Milletian" target="_blank">Milletians</a>!
-                <br>
-                <br> We bring you a tool to satisfy all your gachapon pangs and cravings without the cost <small>and the in-game rewards...</small>
-                <br> Anyways, MabiGacha supports the following features thus far: 
-            </p>
-                <ul>
-                    <li> Saving a list of your loot <small>(You'll lose it all if you clear your cookies, oh no!)</small></li>
-                    <li> Keeping track of your expenditures </li>
-                    <li> Single Gaching </li>
-                    <li> Bulk Gaching </li>
-                    <li> Continual Gaching until specified item is found</li>
-                </ul>
-            <p>In the unfortunate event that you a roll an ultra rare drop in the simulator, I can only offer you my condolesences.</p>
-            <p>For those concerned about the <b>accuracy</b> of this simulator, Mabinogi provides the item table and percentage 
-            <br>for every gachapon, so rest assured! We're getting it straight from the source, beep boop.</p>
-            
-            <b> QUESTION: </b>
-            <b>How do we use the rates to accurately create a gachapon?</b>
-            <div class = "answer-container">
-                <p>For the programmers of Erinn, check out the source code. Otherwise, Rates provided by Nexon are given in the format #.##%. 
-                   For example, 0.16%, which when converted to decimal is 0.016 or 16/1000. <small>wow math!</small> Anyways, if you pretend gachapons are just a bunch of raffle tickets,
-                   imagine that we created a thousand raffle tickets in which only 16 of them have the name of that gacha item written on it. Apply this concept to the rest of the items to make up
-                   all one thousand raffles, and we simply draw tickets out of this raffle pool when you gach at random, read it, and put it back inside for the next round.</p>
-            </div>
+<div class="content" role="main">
 
-            
-            <p>If you'd like to request additional features or have bugs to report, hit us up on the <a href="#">Discord</a>!
-                <br><small>and we'll get to it eventually... </small> </p>
-           
-            <p>Signed,
-                <br>&nbsp;&nbsp;&nbsp;&nbsp;Anonymous Milletians from the Alexina Server 
-            </p>
-        
-            <hr>
-            <h1>Special Thanks to icons8 for the amazing icons. </h1>
-            <a href="https://icons8.com/icon/17926/rucksack" target="_blank"> Rucksack icon by Icons8</a>&nbsp;
-            <a href="https://icons8.com/icon/114892/discord" target="_blank"> Discord icon by Icons8</a>&nbsp;
-            <a href="https://icons8.com/icon/118557/github" target="_blank">GitHub icon by Icons8</a>&nbsp;
-            <a href="https://icons8.com/icon/113082/gift" target="_blank">Gift icon by Icons8</a>&nbsp;
-            <a href="https://icons8.com/icon/110481/about" target="_blank">About icon by Icons8</a> &nbsp;
-        
-        </body>
-    </div>
+    <body>
+        <h1>Mabinogi Gachapon Simulator.</h1>
+        <p> Hey fellow <a href="https://wiki.mabinogiworld.com/view/Milletian" target="_blank">Milletians</a>!
+            <br>
+            <br> We bring you a tool to satisfy all your gachapon pangs and cravings without the cost <small>and the
+                in-game rewards...</small>
+            <br> MabiGacha supports the following features thus far:
+        </p>
+        <ul>
+            <li> Saving a list of your loot <small>(You'll lose it all if you clear your cache)</small></li>
+            <li> Keeping track of your expenditures </li>
+            <li> Single Gaching </li>
+            <li> Bulk Gaching </li>
+            <li> Continual Gaching until specified item is found</li>
+        </ul>
+        <p></p>
+        <p>Hopefully you pull what you want and have fun with the tool!</p>
+
+        <b>About this Project</b>
+        <p>MabiGacha is a tool to simulate opening gachapons from the Korean MMORPG title, Mabinogi. MabiGacha first
+            first went live in 2019. It served more as a personal/practice project
+            for two recent Comp Sci college grads, and as such is more of an early amateur work shared privately amongst friends.
+        </p>
+
+        <b>How do we know this is accurate?</b>
+        <div class="answer-container">
+            <p> South Korea's Fair Trade Commission has required video game developers to accurately disclose the odds
+                of
+                rewards offered in loot boxes. As Mabinogi is published in Korea, we have access to those numbers.
+                So for every pull you do, we are using the exact same rates as the game <small>though the in-game gacha
+                    algorithm may be different, this is a close approximation!</small></p>
+        </div>
+        <b>How is the total NX spent calculated?</b>
+        <div class="answer-container">
+            <p> Currently, we have the hardcoded assumption that all gachas are sold in quantities of 1, 11, and 45 with
+                each option costing 1500 NX, 15000 NX, 57500 NX respectively. When you select the option to gach in
+                those quantities, we will use those prices. When you use our 'specific' gacha, we make the assumption
+                that you bought your gachapons in the most efficient manner and calculate a price.</p>
+
+            <p>For example, if a user needed 50 attempts to pull a specific item, X, we will assume the user purchased
+                one of the 45x Bundle and 5 1x Bundles. Resulting in 57500 + (5 * 1500) = 65,000 NX </p>
+        </div>
+        <b>Can we request additional features or report bugs?</b>
+        <div class="answer-container">
+            <p>Certainly, if a feature request gains enough support and I have the time and I think it's plausible and worthwhile, I'll
+                try
+                to do it! Please keep in mind this is a hobby project and my real life responsibilities come
+                first.<small>note to self: link discord here later</small></p>
+        </div>
+
+        <b>A new gachapon has been released, why doesn't MabiGacha support it?</b>
+        <div class="answer-container">
+            <p>I no longer play this game, so unless someone notifies me, I am not really aware of updates and releases
+                and
+                new gachas. So give me a ping if something new happens that requires changes from us, and I'll upload
+                the new gacha asap!</p>
+        </div>
+
+        <p>If you'd like to request additional features or have bugs to report, hit us up on the <a
+                href="#">Discord</a>!
+            <br><small>and we'll get to it eventually... </small>
+        </p>
+
+        <p>Signed,
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Anonymous Milletians from the now defunct Alexina Server
+        </p>
+
+        <hr>
+        <h1>Thanks to icons8 for the amazing icons. </h1>
+        <a href="https://icons8.com/icon/17926/rucksack" target="_blank"> Rucksack icon by Icons8</a>&nbsp;
+        <a href="https://icons8.com/icon/114892/discord" target="_blank"> Discord icon by Icons8</a>&nbsp;
+        <a href="https://icons8.com/icon/118557/github" target="_blank">GitHub icon by Icons8</a>&nbsp;
+        <a href="https://icons8.com/icon/113082/gift" target="_blank">Gift icon by Icons8</a>&nbsp;
+        <a href="https://icons8.com/icon/110481/about" target="_blank">About icon by Icons8</a> &nbsp;
+
+    </body>
+</div>
 
 </html>
