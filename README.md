@@ -5,13 +5,16 @@ Accurately simulates a lootbox for Nexon's popular MMORPG title, Mabinogi. Suppo
 # R1.0.1 Changelog
  - Upgraded Angular/Angular CLI/Angular Material from Version 10 to Version 14.
  - Updated TypeScript and other dependencies.
- - Removed calls to defunct backend database (no longer hosted) and re-implemented all the gacha logic to be handled locally. 
+ - Re-implemented all the gacha logic to be handled locally rather than by the backend server.js
+    - server.js will now only serve the gachapon's data but not handle the calculations
  - Fixed long standing bug where Loot Table would not update dynamically unless user refreshed. 
  - Updated the data structure that is stored to user's cache to be a single JSON object. 
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run `npm start` for the Express server. Server will be hosted on `http://localhost:5000/`
 
 ## Code scaffolding
 
