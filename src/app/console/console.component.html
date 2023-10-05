@@ -9,9 +9,11 @@
 
   <div *ngFor="let result of resultGach;let last = last;" class="item" #item>
     <p>You have obtained [{{result}}].</p>
-    <div *ngIf="last">
+    <div *ngIf="last && resultsFullySynced">
       <hr />
-      <p>You obtained these results after opening <b>{{resultGach.length}}</b> gachapons.</p>
+      <p>You just opened <b>{{currResultGach.length}}</b> gachapons at the cost of
+        <b>{{quotedPrice?.toLocaleString()}}</b> NX.
+      </p>
     </div>
   </div>
 </div>

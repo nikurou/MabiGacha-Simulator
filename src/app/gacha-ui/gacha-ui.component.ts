@@ -29,7 +29,7 @@ export class GachaUIComponent implements OnInit {
   selectedImage: string;
   selectedGachapon: string; //Sent to options component
   selectedList: string[]; //Sent to options component
-  disable: String; //Determines if the Gach button is disabled
+  disable: string; //Determines if the Gach button is disabled
   numTotalGacha: number;
   totalNX: number;
   lootHistory: gachaLoot; // history of all gach'd items
@@ -43,6 +43,11 @@ export class GachaUIComponent implements OnInit {
   public currResultGach: string[]; //Holds the output from just the current gach
 
   gachas = [
+    new Gachapon(
+      'HARD_CODED_BOX',
+      'assets/img/mabinogi-secret-garden-box-webicon.png',
+      true
+    ),
     new Gachapon(
       'Secret Garden Box',
       'assets/img/mabinogi-secret-garden-box-webicon.png'
@@ -142,31 +147,18 @@ export class GachaUIComponent implements OnInit {
     quantity?: number,
     specificItem?: string
   ) => {
-    let resultGach = [];
     const gachaList = this?.currentGachaObject?.gachaList;
     console.log(selectedOption, quantity, specificItem);
 
     // Fetch a specific Quantity of Items before Stopping.
     if (selectedOption === 'bulk' && quantity > 0) {
-      for (let i = 0; i < quantity; i++) {
-        resultGach?.push(
-          gachaList?.[Math.floor(Math.random() * gachaList?.length)]
-        );
-      }
+      return this?.currentGachaObject?.getRandomItemsByQuantity(quantity);
     }
     // Keep pulling until the item is retrieved, assuming it exists in the list.
-    else if (
-      selectedOption === 'specific' &&
-      gachaList?.includes(specificItem)
-    ) {
-      let randomItem = '';
-      while (randomItem !== specificItem) {
-        randomItem = gachaList?.[Math.floor(Math.random() * gachaList?.length)];
-        console.log(randomItem);
-        resultGach?.push(randomItem);
-      }
+    else if (selectedOption === 'specific') {
+      return this?.currentGachaObject?.getRandomlyItemBySpecifics(specificItem);
     }
-    return resultGach;
+    return;
   };
 
   /* Gach from the current gachapon, and send the gacha result to Console Component*/
@@ -188,15 +180,10 @@ export class GachaUIComponent implements OnInit {
     this.numTotalGacha = Number(this.numTotalGacha) + Number(result_quantity);
 
     // Handle Incrementing the NX spent counter.
-    let bundleFourFive = Math.trunc(result_quantity / 45); //quantity of 45
-    let bundleEleven = Math.trunc((result_quantity % 45) / 11); // quantity of 11
-    let bundleSingle = (result_quantity % 45) % 11;
     this.totalNX =
       this.totalNX +
-      bundleFourFive * 57500 + //quantity of 45
-      bundleEleven * 15000 + // quantity of 11
-      bundleSingle * 1500; // remaining individuals
-
+      Gachapon?.getQuotedPriceForPulls(result_quantity);
+  
     // Set the results and store it in history
     this.currResultGach = local_resultGach;
     this.lootHistory = this.handleMergeLoot(this.lootHistory, local_resultGach);

@@ -9,22 +9,12 @@ export class Gachapon {
   public gachaURL: string; //Image URL
   public gachaList: string[]; //List of items contained in the gachapon
 
-  //Temporary constructor until ".txt" conversion to array logic is moved
-  constructor(gachaName: string, gachaURL: string) {
+  constructor(gachaName: string, gachaURL: string, useDummyData?: boolean) {
     this.gachaName = gachaName;
     this.gachaURL = gachaURL;
-    this.gachaList = [];
-
-    axios
-      .get(`https://mabinogi-gacha.herokuapp.com/gacha/${gachaName}`)
-      .then((res) => {
-        for (let i = 1; i < res.data.length; i += 2) {
-          this.gachaList.push(res.data[i]);
-        }
-      })
-      .catch((error) => {
-        // If the call fails, populate the list with these default values.
-        this.gachaList = [
+    this.gachaList = !useDummyData
+      ? []
+      : [
           'Special Forest Ranger Outfit (M)',
           'Special Forest Ranger Outfit (F)',
           'Special Forest Ranger Muffler Outfit (M)',
@@ -123,6 +113,74 @@ export class Gachapon {
           'Black Star (Rank 1)',
           "Black Dragon Knight's Giant Sword (Rank 1)",
         ];
-      });
+
+    if (!useDummyData) {
+      axios
+        .get(`/gacha/${gachaName}`)
+        .then((res) => {
+          for (let i = 1; i < res.data.length; i += 2) {
+            this.gachaList.push(res.data[i]);
+          }
+        })
+        .catch((error) => {});
+    }
   }
+
+  public getRandomItem = () => {
+    return this.gachaList?.[Math.floor(Math.random() * this.gachaList?.length)];
+  };
+
+  /**
+   * Pull random items (numPulls times) from the pool of items and return the results
+   *
+   * @param numPulls <number>
+   * @returns results <string[]>
+   */
+  public getRandomItemsByQuantity = (numPulls: number): string[] => {
+    let results = [];
+    for (let i = 0; i < numPulls; i++) {
+      results?.push(this.getRandomItem());
+    }
+    return results;
+  };
+
+  /**
+   * Randomly pull items from the pool until the item you are searching for is pulled.
+   *
+   * @param itemName <string>
+   * @returns results <string[]>
+   */
+  public getRandomlyItemBySpecifics = (itemName: string) => {
+    let results = [];
+
+    if (this.gachaList?.includes(itemName)) {
+      let randomItem = '';
+      while (randomItem !== itemName) {
+        randomItem = this?.getRandomItem();
+        results?.push(randomItem);
+      }
+    }
+    return results;
+  };
+
+  /**
+   * Given the number of pulls, calculate the quoted price assuming that gacahs are sold in denominations of 45 boxes/57,500 NX, 11 Boxes/15,000NX, 1 Box/1,500NX.
+   *
+   * TODO: Potentially we may need to support variable Gachapon prices in the future.
+   *
+   * @params numPulls <number>
+   * @returns numPrice <number> Price in NX
+   */
+  static getQuotedPriceForPulls = (numPulls: number) => {
+    let bundleFourFive = Math.trunc(numPulls / 45); //quantity of 45
+    let bundleEleven = Math.trunc((numPulls % 45) / 11); // quantity of 11
+    let bundleSingle = (numPulls % 45) % 11;
+
+    let numPrice =
+      bundleFourFive * 57500 + //quantity of 45
+      bundleEleven * 15000 + // quantity of 11
+      bundleSingle * 1500; // remaining individuals
+
+    return numPrice;
+  };
 }
