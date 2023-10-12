@@ -22,8 +22,16 @@
         <b>About this Project</b>
         <p>MabiGacha is a tool to simulate opening gachapons from the Korean MMORPG title, Mabinogi. MabiGacha first
             first went live in 2019. It served more as a personal/practice project
-            for two recent Comp Sci college grads, and as such is more of an early amateur work shared privately amongst friends.
+            for two recent Comp Sci college grads, however we never shared it with the community at the time.
         </p>
+
+        <b>A new gachapon has been released, why doesn't MabiGacha support it?</b>
+        <div class="answer-container">
+            <p>I no longer play this game, so unless someone notifies me, I am not really aware of updates and releases
+                and
+                new gachas. So give me a ping if something new happens that requires changes from us, and I'll upload
+                the new gacha asap!</p>
+        </div>
 
         <b>How do we know this is accurate?</b>
         <div class="answer-container">
@@ -33,6 +41,15 @@
                 So for every pull you do, we are using the exact same rates as the game <small>though the in-game gacha
                     algorithm may be different, this is a close approximation!</small></p>
         </div>
+
+        <b>What algorithm do you employ to emulate pulls?</b>
+        <div class="answer-container">
+            <p> The algorithm being used is called <b>weighted sampling</b> where an array is populated with
+                items as weighted by their probabilities, and then one is drawn from the pool at random. For example, if
+                item A has a 30% probability of being drawn, we populate 30 indexes of the array with item A. And so on
+                with Item B, C,.... Then we randomly draw from the array.</p>
+        </div>
+
         <b>How is the total NX spent calculated?</b>
         <div class="answer-container">
             <p> Currently, we have the hardcoded assumption that all gachas are sold in quantities of 1, 11, and 45 with
@@ -45,18 +62,11 @@
         </div>
         <b>Can we request additional features or report bugs?</b>
         <div class="answer-container">
-            <p>Certainly, if a feature request gains enough support and I have the time and I think it's plausible and worthwhile, I'll
+            <p>Certainly, if a feature request gains enough support and I have the time and I think it's plausible and
+                worthwhile, I'll
                 try
                 to do it! Please keep in mind this is a hobby project and my real life responsibilities come
                 first.<small>note to self: link discord here later</small></p>
-        </div>
-
-        <b>A new gachapon has been released, why doesn't MabiGacha support it?</b>
-        <div class="answer-container">
-            <p>I no longer play this game, so unless someone notifies me, I am not really aware of updates and releases
-                and
-                new gachas. So give me a ping if something new happens that requires changes from us, and I'll upload
-                the new gacha asap!</p>
         </div>
 
         <p>If you'd like to request additional features or have bugs to report, hit us up on the <a
