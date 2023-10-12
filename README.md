@@ -17,7 +17,7 @@ Simulates a lootbox for Nexon's popular MMORPG title, Mabinogi. Supports feature
   - new endpoints created
 - Added visual support for dye colors in console tab.
 
-# Features on the Slate 
+# Upcoming Features on the Slate 
 - Add MatSorting and MatSearch function for Loot pages MaterialUI Table.
 
 ## Running the Project on Your Local
