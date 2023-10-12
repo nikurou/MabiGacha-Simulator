@@ -5,7 +5,6 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import axios from 'axios';
 import gachaponServices from 'src/services/gachaponServices';
 
 @Component({
