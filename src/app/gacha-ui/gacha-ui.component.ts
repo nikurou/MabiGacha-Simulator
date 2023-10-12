@@ -75,7 +75,7 @@ export class GachaUIComponent implements OnInit {
         'assets/img/bleugenne-by-bleugenne-cosmetics-box.png'
       ),
       await Gachapon.Create(
-        'HARD_CODED_BOX',
+        'Example_Box',
         'assets/img/mabinogi-secret-garden-box-webicon.png',
         true
       ),

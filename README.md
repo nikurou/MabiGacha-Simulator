@@ -19,6 +19,7 @@ Simulates a lootbox for Nexon's popular MMORPG title, Mabinogi. Supports feature
 
 # Upcoming Features on the Slate 
 - Add MatSorting and MatSearch function for Loot pages MaterialUI Table.
+- Actual router routes....
 
 ## Running the Project on Your Local
 
