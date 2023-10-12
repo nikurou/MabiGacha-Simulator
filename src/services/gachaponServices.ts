@@ -2,7 +2,7 @@ import axios from 'axios';
 import { environment } from 'src/environments/environment';
 
 const baseUrl = environment?.production
-  ? 'http://localhost:5000/gacha' //prod url idk what it is yet
+  ? 'https://mabinogi-gacha.herokuapp.com/gacha'
   : 'http://localhost:5000/gacha';
 
 /* Grabs List of Unique Items with their rates in the form of
