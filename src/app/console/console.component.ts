@@ -12,6 +12,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Gachapon } from '../gacha-ui/gacha-logic';
+import { gachaHelper } from 'src/services/gachaHelper';
 
 @Component({
   selector: 'app-console',
@@ -65,6 +66,7 @@ export class ConsoleComponent implements OnInit, OnChanges {
     let i = 0;
     let stopIndex: number;
     this.resultsFullySynced = false;
+    this.resultGach = [];
 
     if (this.slowEnabled == false) {
       //Hacky workaround to give currResultGach time to be passed from gacha-UI. without this,
@@ -111,6 +113,12 @@ export class ConsoleComponent implements OnInit, OnChanges {
     } else {
       this.timeInterval = 0; //instant
     }
+  }
+
+  public getColorHexCode(text: string) {
+    let color = gachaHelper?.getColorHexCode(text);
+    console.log('color', color);
+    return color;
   }
 
   /*--AutoScroll from this tutorial: 

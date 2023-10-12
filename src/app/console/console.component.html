@@ -8,7 +8,9 @@
   <h1 style="display:inline-block;">Console Log </h1>
 
   <div *ngFor="let result of resultGach;let last = last;" class="item" #item>
-    <p>You have obtained [{{result}}].</p>
+    <p>You have obtained
+      <bold [ngStyle]="{'border-bottom': '2px solid ' + getColorHexCode(result)}">[{{result}}]</bold>.
+    </p>
     <div *ngIf="last && resultsFullySynced">
       <hr />
       <p>You just opened <b>{{currResultGach.length}}</b> gachapons at the cost of
