@@ -8,7 +8,7 @@
           src="https://img.icons8.com/material-sharp/24/000000/down-squared.png" /></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item *ngFor="let gacha of gachas" [value]="gacha"
-          (click)="selectedItem(gacha); tabGroup.selectedIndex=0; rates.reInit(selectedGachapon); options.clearTheSearch();">
+          (click)="selectedItem(gacha); tabGroup.selectedIndex=0; options.clearTheSearch();">
           {{gacha.gachaName}}
         </button>
 

@@ -38,50 +38,19 @@ export class GachaUIComponent implements OnInit {
   slowModeStatus: boolean; // Received from console.component.ts
   optionsDisable: string; //Receieved from options.component.ts
   selectedOptions: userSelectedOptions; // recieved from options.component.ts
+  gachas: Gachapon[];
 
   public resultGach: string[]; //Holds all the output from server...Sent to Console
   public currResultGach: string[]; //Holds the output from just the current gach
 
-  gachas = [
-    new Gachapon(
-      'HARD_CODED_BOX',
-      'assets/img/mabinogi-secret-garden-box-webicon.png',
-      true
-    ),
-    new Gachapon(
-      'Secret Garden Box',
-      'assets/img/mabinogi-secret-garden-box-webicon.png'
-    ),
-    new Gachapon(
-      'Crow Feather Box',
-      'assets/img/mabinogi-crow-feather-box.png'
-    ),
-    new Gachapon(
-      'Forest Ranger Bag Gachapon',
-      'assets/img/forest-guardian_basic.png'
-    ),
-    new Gachapon(
-      'Erinn Beauty Box',
-      'assets/img/mabinogi-erinn-beauty-box-webicon.png'
-    ),
-    new Gachapon(
-      'Modern School Uniform Box',
-      'assets/img/mabinogi-modern-school-uniform-box-webicon.png'
-    ),
-  ];
-
   constructor() {
-    this.currentGachaObject = this.gachas[0];
-    this.selectedGachapon = this.gachas[0].gachaName;
-    this.selectedImage = this.gachas[0].gachaURL;
-    this.selectedList = this.gachas[0].gachaList;
     this.disable = 'false';
     this.optionsDisable = 'false';
     this.resultGach = [];
     this.currResultGach = [];
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     if (localStorage.getItem('gachaCache') === null) {
       localStorage.setItem(
         'gachaCache',
@@ -96,15 +65,51 @@ export class GachaUIComponent implements OnInit {
     let { totalNX, numGacha, lootList } = JSON.parse(
       localStorage?.getItem('gachaCache')
     );
-    console.log(totalNX, numGacha, lootList);
     this.totalNX = totalNX;
     this.numTotalGacha = numGacha;
     this.lootHistory = lootList;
+
+    this.gachas = [
+      await Gachapon.Create(
+        'BLEUGENNE by Bleugenne Cosmetics',
+        'assets/img/bleugenne-by-bleugenne-cosmetics-box.png'
+      ),
+      await Gachapon.Create(
+        'HARD_CODED_BOX',
+        'assets/img/mabinogi-secret-garden-box-webicon.png',
+        true
+      ),
+      await Gachapon.Create(
+        'Secret Garden Box',
+        'assets/img/mabinogi-secret-garden-box-webicon.png'
+      ),
+      await Gachapon.Create(
+        'Crow Feather Box',
+        'assets/img/mabinogi-crow-feather-box.png'
+      ),
+      await Gachapon.Create(
+        'Forest Ranger Bag Gachapon',
+        'assets/img/forest-guardian_basic.png'
+      ),
+      await Gachapon.Create(
+        'Erinn Beauty Box',
+        'assets/img/mabinogi-erinn-beauty-box-webicon.png'
+      ),
+      await Gachapon.Create(
+        'Modern School Uniform Box',
+        'assets/img/mabinogi-modern-school-uniform-box-webicon.png'
+      ),
+    ];
+
+    this.currentGachaObject = this.gachas[0];
+    this.selectedGachapon = this.gachas[0].gachaName;
+    this.selectedImage = this.gachas[0].gachaURL;
+    this.selectedList = this.gachas[0].gachaList;
+    this.selectedItem(this.gachas[0]);
   }
 
   recieveOptionsFromChild($event) {
     this.selectedOptions = $event;
-    console.log(JSON?.parse(JSON?.stringify(this?.selectedOptions)));
   }
 
   recieveDisabilityFromChild($event) {
@@ -116,8 +121,9 @@ export class GachaUIComponent implements OnInit {
   }
 
   /* Upon selection of new gachapon update all the properties*/
-  selectedItem(gacha: Gachapon) {
+  async selectedItem(gacha: Gachapon) {
     this.currentGachaObject = gacha;
+    await gacha.fetchDataForGachapon();
     this.selectedGachapon = gacha.gachaName;
     this.selectedImage = gacha.gachaURL;
     this.selectedList = gacha.gachaList;
@@ -148,7 +154,6 @@ export class GachaUIComponent implements OnInit {
     specificItem?: string
   ) => {
     const gachaList = this?.currentGachaObject?.gachaList;
-    console.log(selectedOption, quantity, specificItem);
 
     // Fetch a specific Quantity of Items before Stopping.
     if (selectedOption === 'bulk' && quantity > 0) {
@@ -181,9 +186,8 @@ export class GachaUIComponent implements OnInit {
 
     // Handle Incrementing the NX spent counter.
     this.totalNX =
-      this.totalNX +
-      Gachapon?.getQuotedPriceForPulls(result_quantity);
-  
+      this.totalNX + Gachapon?.getQuotedPriceForPulls(result_quantity);
+
     // Set the results and store it in history
     this.currResultGach = local_resultGach;
     this.lootHistory = this.handleMergeLoot(this.lootHistory, local_resultGach);

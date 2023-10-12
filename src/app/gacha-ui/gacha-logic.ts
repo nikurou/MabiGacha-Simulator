@@ -2,16 +2,20 @@
 
 import { RouteConfigLoadEnd } from '@angular/router';
 import axios from 'axios';
+import gachaponServices from 'src/services/gachaponServices';
 declare const gachaLogic: any;
 
 export class Gachapon {
   public gachaName: string; //Gachapon's Name
   public gachaURL: string; //Image URL
   public gachaList: string[]; //List of items contained in the gachapon
+  public gachaPool: string[]; // List of items in the POOL in correlation with their rate, reservoir method population
+  public useDummyData: boolean;
 
   constructor(gachaName: string, gachaURL: string, useDummyData?: boolean) {
     this.gachaName = gachaName;
     this.gachaURL = gachaURL;
+    this.useDummyData = useDummyData;
     this.gachaList = !useDummyData
       ? []
       : [
@@ -113,21 +117,33 @@ export class Gachapon {
           'Black Star (Rank 1)',
           "Black Dragon Knight's Giant Sword (Rank 1)",
         ];
-
-    if (!useDummyData) {
-      axios
-        .get(`/gacha/${gachaName}`)
-        .then((res) => {
-          for (let i = 1; i < res.data.length; i += 2) {
-            this.gachaList.push(res.data[i]);
-          }
-        })
-        .catch((error) => {});
-    }
+    this.gachaPool = !useDummyData ? [] : this.gachaList;
   }
 
+  static async Create(
+    gachaName: string,
+    gachaURL: string,
+    useDummyData?: boolean
+  ) {
+    return new Gachapon(gachaName, gachaURL, useDummyData);
+  }
+
+  public fetchDataForGachapon = async () => {
+    if (!this.useDummyData) {
+      this.gachaList = await gachaponServices?.getListOfItemsFromGacha(
+        this.gachaName
+      );
+      this.gachaPool = await gachaponServices?.getPoolListFromGacha(
+        this.gachaName
+      );
+    }
+  };
+
+  /*
+   * Pull a random item from the gachaPool.
+   */
   public getRandomItem = () => {
-    return this.gachaList?.[Math.floor(Math.random() * this.gachaList?.length)];
+    return this.gachaPool?.[Math.floor(Math.random() * this.gachaPool?.length)];
   };
 
   /**
