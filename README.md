@@ -30,3 +30,9 @@ Run `npm install` to install all the necessary packages.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run `npm start` for the Express server. Server will be hosted on `http://localhost:5000/` Changes to the backend logic will require a manual server restart. (todo: nodemon)
+
+## Building/Deploying the Project 
+ 
+ Before deploying to prod, Run `npm run heroku-postbuild` and ensure your build succeeds. 
+
+ Then deploy through Heroku CLI or Heroku Dashboard
